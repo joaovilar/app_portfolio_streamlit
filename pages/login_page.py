@@ -20,21 +20,21 @@ def conectar_ao_banco():
         st.error(f"Erro ao conectar ao banco de dados: {e}")
         return None
 
-# Função para validar o login
-def validar_login(conn, username, password):
+# Função para validar o login e obter o nome do usuário
+def validar_login_e_obter_nome(conn, username, password):
     try:
         cursor = conn.cursor()
-        # Consulta para verificar se o nome de usuário e senha existem na tabela 'tbusuario'
-        query = "SELECT * FROM tbusuario WHERE usuario = ? AND senha = ?"
+        # Consulta para verificar o usuário e buscar o campo 'nome'
+        query = "SELECT nome FROM tbusuario WHERE usuario = ? AND senha = ?"
         cursor.execute(query, (username, password))
         result = cursor.fetchone() 
         if result:
-            return True
+            return result[0]  # Retorna o valor do campo 'nome'
         else:
-            return False
+            return None
     except Exception as e:
         st.error(f"Erro ao verificar as credenciais: {e}")
-        return False
+        return None
 
 # Inserindo o CSS customizado para melhorar o design e posicionar o botão de logout no topo
 st.markdown("""
@@ -117,7 +117,7 @@ def pagina_bem_vindo():
         st.rerun()  # Recarrega a página para voltar ao login
     
     st.title("Bem-vindo!")
-    st.write(f"Olá, {st.session_state.username}!")
+    st.write(f"Olá, {st.session_state.nome}!")  # Exibe o nome em vez do nome de usuário
 
 # Tela de login no Streamlit
 def pagina_login():
@@ -125,9 +125,7 @@ def pagina_login():
     if 'username' in st.session_state:
         pagina_bem_vindo()
     else:
-
         st.title("Login")
-
 
         username = st.text_input("Digite o nome de usuário")
         password = st.text_input("Digite a senha", type="password")
@@ -137,8 +135,10 @@ def pagina_login():
                 conn = conectar_ao_banco()
                 if conn:
                     # Valida o login diretamente na tabela tbusuario
-                    if validar_login(conn, username, password):
+                    nome = validar_login_e_obter_nome(conn, username, password)
+                    if nome:
                         st.session_state.username = username  # Salva o nome de usuário na sessão
+                        st.session_state.nome = nome  # Salva o nome na sessão
                         st.session_state.logged_in = True  # Marca o usuário como logado
                         st.success("Login bem-sucedido!")
                         st.rerun()  # Faz o Streamlit recarregar a página
@@ -149,5 +149,5 @@ def pagina_login():
             else:
                 st.error("Por favor, preencha todos os campos.")
 
-
+# Chama a função principal da aplicação
 pagina_login()

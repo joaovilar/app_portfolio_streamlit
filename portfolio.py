@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Configurações da página
-st.set_page_config(page_title="Portfólio de Análise de Dados", layout="wide")
+st.set_page_config(page_title="Data Analysis Portfolio", layout="wide")
 
 
 
@@ -21,7 +21,7 @@ def main_page():
     with col1:
         st.markdown("""
             <h1>João Vilar Braga</h1>
-            <h4> Data Engineering | Azure Cloud | SQL, Python, Spark, Power BI, Databricks, Airflow, ADF, SSIS </h4>
+            <h4> Data Engineering | Business Intelligence | Azure Cloud | SQL, Python, Spark, Power BI, Databricks, Airflow, ADF, SSIS </h4>
         """, unsafe_allow_html=True)
 
     # Coluna para os ícones do GitHub e LinkedIn
@@ -54,53 +54,55 @@ def main_page():
     #st.header("8 Anos de Experiência em Análise de Dados e Engenharia de Dados")
 
     # Seção de Introdução
-    st.subheader("Sobre Mim")
+    st.subheader("About Me")
     st.write("""
-    Com 8 anos de experiência na área de dados, sou especializado na construção e otimização de pipelines de dados, abrangendo extração, transformação, carregamento (ETL) e análise. Minha trajetória inclui um sólido conhecimento em bancos de dados relacionais, integração de dados e ferramentas de visualização como Power BI. Atualmente, estou expandindo minhas habilidades em arquiteturas de nuvem, focando no ecossistema Microsoft Azure e Databricks, criando soluções escaláveis e orientadas para resultados.
+    I am a technology enthusiast. With 8 years of experience in the data field, I specialize in building and optimizing data pipelines, encompassing extraction, transformation, loading (ETL), and analysis. My journey includes solid knowledge of relational databases, data integration, and visualization tools like Power BI. Currently, I am expanding my skills in cloud architectures, focusing on the Microsoft Azure and Databricks ecosystem, creating scalable and results-driven solutions.
     """)
 
      # Adicionando E-mail e Cidade
     st.write("""
     📧 **E-mail:** j.vilar12@gmail.com  
-    🌍 **Cidade:** Brasília-DF, Brasil
+    🌍 **City:** Brasília-DF, Brasil
     """)
 
     # Seção de Habilidades
-    st.subheader("Habilidades")
+    st.subheader("Skills")
     st.write("""
-    - **Microsoft Azure:** Experiência com Azure Data Factory, Synapse Analytics, Azure Data Lake, SQL Database e integração com Databricks, desenvolvendo soluções de orquestração e armazenamento de dados na nuvem.
-    - **ETL e Orquestração:** Criação de fluxos de dados utilizando Python, SQL, Airflow, IBM DataStage e SSIS, otimizando o processamento de dados para análise e tomada de decisão.
-    - **Bancos de Dados:** MySQL, PostgreSQL, SQL Server, Google BigQuery, com foco em modelagem relacional e dimensional, e consultas NoSQL com MongoDB.
-    - **Análise de Dados e Visualização:** Desenvolvimento de dashboards e relatórios em Power BI, Reporting Services, Looker e Qlik Sense, transformando dados em informações úteis.
-    - **Bibliotecas Python:** Utilização de Pandas, NumPy, Matplotlib e Seaborn para análise de dados, visualização e processamento estatístico.
-    - **Estatísticas e Análise:** Aplicação de conceitos de estatísticas descritivas como média, moda, mediana, variância, desvio padrão, curtose, distribuições simétricas e assimétricas, distribuição de frequência e boxplot.
-    - **Ferramentas de Desenvolvimento e Versionamento:** Git/GitHub, Jupyter Notebook, Google Colab e Visual Studio Code, garantindo práticas ágeis e colaborativas no desenvolvimento de projetos.
+    - **Microsoft Azure:** Experience with Azure Data Factory, Synapse Analytics, Azure Data Lake, SQL Database, and integration with Databricks, developing orchestration and cloud data storage solutions.
+    - **ETL and Orchestration:** Creating data flows using Python, SQL, Airflow, IBM DataStage, and SSIS, optimizing data processing for analysis and decision-making.
+    - **Databases:** MySQL, PostgreSQL, SQL Server, Google BigQuery, with a focus on relational and dimensional modeling, and NoSQL queries with MongoDB.
+    - **Data Analysis and Visualization:** Developing dashboards and reports in Power BI, Reporting Services, Looker, and Qlik Sense, transforming data into actionable insights.
+    - **Python Libraries:** Using Pandas, NumPy, Matplotlib, and Seaborn for data analysis, visualization, and statistical processing.
+    - **Statistics and Analysis:** Applying descriptive statistics concepts such as mean, mode, median, variance, standard deviation, kurtosis, symmetric and asymmetric distributions, frequency distribution, and boxplot.
+    - **Development and Versioning Tools:** Git/GitHub, Jupyter Notebook, Google Colab, and Visual Studio Code, ensuring agile and collaborative practices in project development.
     """)
+
 
     # Seção de Educação e Certificações
-    st.subheader("Educação e Certificações")
+    st.subheader("Education and Certifications")
     st.write("""
-    - **Graduação em Análise e Desenvolvimento de Sistemas**
-    - **MBA em Análise de Dados com BI e Big Data**
-    - **Pós-graduação em Ethical Hacking e Cybersecurity**
-    - **Certificações Microsoft:**
-      - 70-762 - Desenvolvimento de Bancos de Dados SQL
-      - 70-461 - Consultas em Microsoft SQL Server
+    - **Graduated in Systems Analysis and Development**
+    - **MBA in Data Analysis with BI and Big Data**
+    - **Postgraduate in Ethical Hacking and Cybersecurity**
+    - **Microsoft Certifications:**
+        - 70-762 - SQL Database Development
+        - 70-461 - Queries in Microsoft SQL Server
     """)
 
-    st.subheader("Idiomas")
+
+    st.subheader("Languages")
     st.write("""
-    - Português (Nativo)
-    - Inglês (Intermediário - B1)
-    - Espanhol (Básico) """)
+    - Portuguese (Native)
+    - English (Intermediate - B1)
+    - Spanish (Basic) """)
     
 
     st.markdown("""
 <div style="border-radius: 15px; background-color: #add8e6; padding: 8px; display: flex; align-items: center; width: 100%; margin: auto; margin-bottom: 45px;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" style="width: 40px; margin-left: 10px;" />
     <div style="text-align: center; flex: 1;">
-        <h3>Painéis em Power BI</h3>
-        <h6>Clique na imagem para ser redirecionado</h6>
+        <h3>Power BI Dashboards</h3>
+        <h6>Click on the image to be redirected</h6>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -118,16 +120,16 @@ def main_page():
 
     with col1:
         st.markdown(f'<div style="text-align: center;"><a href="{linkp1}" target="_blank"><img src="{img_path1}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Painel de Operações do Delivery Center - Visão geral das operações, destacando KPIs como a taxa de entrega e a performance do time', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Delivery Center Operations Dashboard- Overview of operations, highlighting KPIs such as delivery rate and team performance', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
     with col2:
         st.markdown(f'<div style="text-align: center;"><a href="{linkp1}" target="_blank"><img src="{img_path2}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Painel de Acompanhamento Financeiro', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Financial Monitoring Dashboard', unsafe_allow_html=True)
 
 
     with col3:
         st.markdown(f'<div style="text-align: center;"><a href="{linkp3}" target="_blank"><img src="{img_path3}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Painel de Operações de People Analytics - Fornece uma visão detalhada sobre a diversidade no ambiente de trabalho</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">People Analytics Operations Dashboard - Provides a detailed view of diversity in the workplace</div>', unsafe_allow_html=True)
 
     # Segunda fileira de 3 imagens
     col1, col2, col3 = st.columns(3)
@@ -142,23 +144,23 @@ def main_page():
     
     with col1:
         st.markdown(f'<div style="text-align: center;"><a href="{link4}" target="_blank"><img src="{img_path4}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Relatório Geral de Vendas - Análise detalhada de vendas por categoria e produto</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">General Sales Report - Detailed analysis of sales by category and product</div>', unsafe_allow_html=True)
 
     with col2:
         st.markdown(f'<div style="text-align: center;"><a href="{link5}" target="_blank"><img src="{img_path5}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Painel de Distribuição de Produtos Farmacêuticos</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Pharmaceutical Product Distribution Dashboard</div>', unsafe_allow_html=True)
 
     with col3:
         st.markdown(f'<div style="text-align: center;"><a href="{link6}" target="_blank"><img src="{img_path6}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Painel de Vendas de Viagens - Acompanhamento das vendas de pacotes de viagem</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Travel Sales Dashboard - Tracking sales of travel packages</div>', unsafe_allow_html=True)
         
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
 <div style="border-radius: 15px; background-color: #ecb653; padding: 8px; display: flex; align-items: center; width: 100%; margin: auto; margin-bottom: 45px;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Databricks_Logo.png/640px-Databricks_Logo.png" style="width: 85px; margin-left: 10px;" />
     <div style="text-align: center; flex: 1;">
-        <h3>Scripts notebooks no Databricks</h3>
-        <h6>Clique na imagem para ser redirecionado</h6>
+        <h3>Databricks Notebook Scripts</h3>
+        <h6>Click on the image to be redirected</h6>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -168,30 +170,40 @@ def main_page():
     img_pathd1 = "https://i.imghippo.com/files/MzNw9037WFM.png"
     img_pathd2 = "https://i.imghippo.com/files/EGb4758qCg.png"
     img_pathd3 = "https://i.imghippo.com/files/epj8217m.png"
+    img_pathd4="https://i.imghippo.com/files/RrUa3259Gto.png"
 
     linkd1 = "https://github.com/joaovilar/azuresql-to-datalake-medallion-dbdelta"
     linkd2 = "https://github.com/joaovilar/create_deltatable_databricks"
     linkd3 = "https://github.com/joaovilar/migration_mysql_to_databricks"
+    linkd4="https://github.com/joaovilar/Data-from-AWS-S3-in-Azure-Databricks/blob/main/Getting%20Data%20from%20Bucket%20S3.ipynb"
 
     with col1:
         st.markdown(f'<div style="text-align: center;"><a href="{linkd1}" target="_blank"><img src="{img_pathd1}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Arquitetura lakehouse, tabelas no azure sql database para o databricks</div>', unsafe_allow_html=True)
-
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Lakehouse Architecture, tables in Azure SQL Database for Databricks</div>', unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+    
     with col2:
         st.markdown(f'<div style="text-align: center;"><a href="{linkd2}" target="_blank"><img src="{img_pathd2}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Criação de tabela em delta lendo de diretório do azure data lake para Databricks</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Creating Delta table by reading from Azure Data Lake directory to Databricks</div>', unsafe_allow_html=True)
 
     with col3:
         st.markdown(f'<div style="text-align: center;"><a href="{linkd3}" target="_blank"><img src="{img_pathd3}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Migração de tabelas no MySQL para o Databricks em delta</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Migrating MySQL tables to Databricks in Delta format</div>', unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown(f'<div style="text-align: center;"><a href="{linkd4}" target="_blank"><img src="{img_pathd4}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Getting data from Amazon S3 bucket in Azure Databricks as dataframe and table</div>', unsafe_allow_html=True)
+
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
 <div style="border-radius: 15px; background-color: #b1ff9a; padding: 10px; display: flex; align-items: center; width: 100%; margin: auto; margin-bottom: 45px;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/AirflowLogo.png/220px-AirflowLogo.png" style="width: 80px; margin-left: 10px;" />
     <div style="text-align: center; flex: 1;">
-        <h3>Pipeline de dados no Airflow com Python</h3>
-        <h6>Clique na imagem para ser redirecionado</h6>
+        <h3>Data Pipelines in Airflow with Python</h3>
+        <h6>Click on the image to be redirected</h6>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -215,8 +227,8 @@ def main_page():
 <div style="border-radius: 15px; background-color: #d3d3d3; padding: 8px; display: flex; align-items: center; width: 100%; margin: auto; margin-bottom: 45px;">
     <img src="https://i.imghippo.com/files/JJeU2683EVQ.png" style="width: 100px; margin-left: 10px; margin-right: 20px;" />
     <div style="text-align: center; flex: 1;">
-        <h3>Manipulação de dados em Geral com Python - Visual Code, Jupyter Notebook, Google Colab</h3>
-        <h6>Clique na imagem para ser redirecionado</h6>
+        <h3>General Data Manipulation with Python - Visual Code, Jupyter Notebook, Google Colab</h3>
+        <h6>Click on the image to be redirected</h6>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -234,16 +246,16 @@ def main_page():
 
     with col1:
         st.markdown(f'<div style="text-align: center;"><a href="{link_py1}" target="_blank"><img src="{img_path_py1}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Manipulação de dados no Jupyter Notebook</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Data manipulation in Jupyter Notebook</div>', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
 
     with col2:
         st.markdown(f'<div style="text-align: center;"><a href="{link_py2}" target="_blank"><img src="{img_path_py2}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Gráficos com as bibliotecas python matplotlib e seaborn</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Charts with Python libraries matplotlib and seaborn</div>', unsafe_allow_html=True)
 
     with col3:
         st.markdown(f'<div style="text-align: center;"><a href="{link_py3}" target="_blank"><img src="{img_path_py3}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Execução de scripts com spark no google colab</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Running scripts with Spark in Google Colab</div>', unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
 
@@ -257,132 +269,144 @@ def main_page():
 
     with col1:
         st.markdown(f'<div style="text-align: center;"><a href="{link_py4}" target="_blank"><img src="{img_path_p4}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Extração de arquivos do azure datalake para tabelas no Azure SQL com tratamento de dados</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Extracting files from Azure Data Lake to tables in Azure SQL with data processing</div>', unsafe_allow_html=True)
 
     with col2:
         st.markdown(f'<div style="text-align: center;"><a href="{link_py5}" target="_blank"><img src="{img_path_p5}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Dataframe consolidado e envia para o Banco de Dados Azure SQL</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Consolidated dataframe and sending it to Azure SQL Database</div>', unsafe_allow_html=True)
 
     with col3:
         st.markdown(f'<div style="text-align: center;"><a href="{link_py6}" target="_blank"><img src="{img_path_p6}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Comparação de consultas usando python e sql</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Comparison of queries using Python and SQL</div>', unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
 <div style="border-radius: 15px; background-color: #ff7b5a; padding: 10px; display: flex; align-items: center; width: 100%; margin: auto; margin-bottom: 45px;">
     <img src="https://seeklogo.com/images/S/streamlit-logo-B405F7E2FC-seeklogo.com.png" style="width: 80px; margin-left: 10px;" />
     <div style="text-align: center; flex: 1;">
-        <h3>Desenvolvimento Python com Streamlit</h3>
-        <h6>Clique na imagem para ser redirecionado</h6>
+        <h3>Python Development with Streamlit Library</h3>
+        <h6>Click on the image to be redirected</h6>
     </div>
 </div>
 """, unsafe_allow_html=True)
-
-
 
     col1, col2, col3 = st.columns(3)
 
     img_path_s1="https://i.imghippo.com/files/xqY2891gj.png"
     img_path_s2="https://i.imghippo.com/files/peIm9743KRg.png"
     img_path_s3="https://i.imghippo.com/files/kzNQ1558M.png"
+    img_path_s4="https://i.imghippo.com/files/dfnm3816j.png"
+    img_path_s5="https://i.imghippo.com/files/uVgh3793WnI.png"
 
     link_s1="https://github.com/joaovilar/report_streamlit_dataset_dash"
     link_s2="https://github.com/joaovilar/face_detection"
     link_s3="https://github.com/joaovilar/app_streamlit_upload_file_azure"
+    link_s4="https://github.com/joaovilar/sistema-de-cadastro-de-pessoa"
+    link_s5="https://github.com/joaovilar/login_screen"
 
 
     with col1:
         st.markdown(f'<div style="text-align: center;"><a href="{link_s1}" target="_blank"><img src="{img_path_s1}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Relatório e Dashboard dinâmico utilizando streamlit</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Report and dynamic dashboard using Streamlit</div>', unsafe_allow_html=True)
 
     with col2:
         st.markdown(f'<div style="text-align: center;"><a href="{link_s2}" target="_blank"><img src="{img_path_s2}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Sistema que identifica o rosto humano utilizando a biblioteca opencv</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">System that identifies human faces using the OpenCV library</div>', unsafe_allow_html=True)
 
     with col3:
         st.markdown(f'<div style="text-align: center;"><a href="{link_s3}" target="_blank"><img src="{img_path_s3}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Gerencimento de arquivos no Azure Datalake, possibilitando listar os diretórios e fazer upload</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">File management system on Azure Data Lake, allowing directory listing and file upload</div>', unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown(f'<div style="text-align: center;"><a href="{link_s4}" target="_blank"><img src="{img_path_s4}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">People registration app, allowing information entry and photo capture using the webcam</div>', unsafe_allow_html=True)
+
+    with col2:
+        st.markdown(f'<div style="text-align: center;"><a href="{link_s5}" target="_blank"><img src="{img_path_s5}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Login application developed with Streamlit and connected to an Azure SQL database</div>', unsafe_allow_html=True)
 
 
 def experience_page():
     st.markdown("""
-    <h1 style="text-align: center;">Experiência Profissional</h1>
+    <h1 style="text-align: center;">Professional Experience</h1>
     <hr style="border: 1px solid #000; width: 80%; margin: 20px auto;">
     """, unsafe_allow_html=True)
 
     st.write("""
     ### Senior Business Intelligence Analyst  
-    **Stefanini Group · Tempo integral**  
-    **Setembro de 2022 - o momento · 2 anos 4 meses (Home Office)**  
+    **Stefanini Group · Full-time**  
+    **September 2022 - Present · 2 years 4 months (Home Office)**  
 
-    Tenho contribuído significativamente para o monitoramento de inadimplências no **Banco do Brasil Seguros**, proporcionando maior visibilidade sobre **milhares de reais** e automatizando a estruturação de dados com base em estratégias internas.  
+    I have made significant contributions to monitoring defaults at **Banco do Brasil Seguros**, providing greater visibility into **thousands of reais** and automating data structuring based on internal strategies.  
 
-    Atendo demandas de diversas áreas, oferecendo suporte no acompanhamento de processos e desenvolvendo **consultas SQL e scripts** em **MySQL, PostgreSQL e DB2**, utilizando **DBeaver**.  
-    Crio **dashboards e relatórios dinâmicos no Power BI** (Desktop e Report Server), fornecendo informações estratégicas, além de desenvolver **Jobs de ETL no IBM DataStage**.  
+    I handle demands from various departments, offering support in tracking processes and developing **SQL queries and scripts** in **MySQL, PostgreSQL, and DB2**, using **DBeaver**.  
+    I create **dynamic dashboards and reports in Power BI** (Desktop and Report Server), providing strategic information, and also develop **ETL Jobs in IBM DataStage**.  
 
-    Participo ativamente de interações diárias com a equipe, garantindo **alinhamento** e **entrega de resultados** conforme as expectativas do produto.
-
+    I actively participate in daily interactions with the team, ensuring **alignment** and **delivery of results** according to product expectations.
 
     ### Business Intelligence Analyst  
-    **G4F Soluções Corporativas | Dezembro de 2019 - Setembro de 2022**  
-    Contribuí significativamente para o Ministério da Economia em diversas frentes:
+    **G4F Soluções Corporativas | December 2019 - September 2022**  
+    I made significant contributions to the Ministry of Economy in various areas:
 
-    - Business Intelligence (BI): Desenvolvimento de relatórios interativos e intuitivos no Power BI, oferecendo insights estratégicos.
-    - Processos ETL com SSIS: Construção de fluxos eficientes de ETL utilizando o SQL Server Integration Services.
-    - Consultas e Scripts SQL: Consultas avançadas em SQL Server, PostgreSQL e MySQL, garantindo extração de dados precisa.
-    - Ambiente Qlik Sense: Desenvolvimento e suporte de painéis personalizados no Qlik Sense, atendendo demandas de áreas específicas.
+    - Business Intelligence (BI): Development of interactive and intuitive reports in Power BI, offering strategic insights.
+    - ETL Processes with SSIS: Building efficient ETL flows using SQL Server Integration Services.
+    - SQL Queries and Scripts: Advanced queries in SQL Server, PostgreSQL, and MySQL, ensuring accurate data extraction.
+    - Qlik Sense Environment: Development and support of custom dashboards in Qlik Sense, meeting the demands of specific areas.
 
-    ### BI systems analyst  
-    **Indra | Minsait | Novembro de 2021 - Abril de 2022**  
-    Atuei em projetos de BI com foco em:
+    ### BI Systems Analyst  
+    **Indra | Minsait | November 2021 - April 2022**  
+    I worked on BI projects focusing on:
 
-    - Script T-SQL e SSIS: Desenvolvimento de scripts eficientes no SQL Server e processos de ETL.
-    - Relatórios com Power BI: Criação de relatórios interativos para tomada de decisões estratégicas.
-    - Metodologia Scrum: Participação em entregas ágeis e colaborativas.
-    - Documentação Detalhada: Elaboração de documentação para uso e referência futura.
+    - T-SQL Scripts and SSIS: Development of efficient scripts in SQL Server and ETL processes.
+    - Reports with Power BI: Creation of interactive reports for strategic decision-making.
+    - Scrum Methodology: Participation in agile and collaborative deliveries.
+    - Detailed Documentation: Creation of documentation for future reference and usage.
 
     ### Mid-Level Business Intelligence Analyst  
-    Desempenhei um papel crucial ao atender demandas de Business Intelligence para o Ministério da Economia. Minhas realizações incluíram:
+    I played a crucial role in addressing Business Intelligence demands for the Ministry of Economy. My achievements included:
 
-    - Desenvolvimento de Painéis e Relatórios com Power BI: Criei painéis interativos e relatórios informativos no Power BI, oferecendo insights essenciais para decisões estratégicas.
+    - Development of Dashboards and Reports with Power BI: I created interactive dashboards and informative reports in Power BI, providing essential insights for strategic decisions.
+    
+    - T-SQL Scripting and Database Queries: I wrote T-SQL scripts in SQL Server and MySQL databases, streamlining data retrieval.
 
-    - Scripting T-SQL e Consultas em Bancos de Dados: Escrevi scripts T-SQL no SQL Server e em bancos de dados MySQL, agilizando a obtenção de dados.
+    - Support and Adjustments for OLAP Cubes and ETL Packages: I contributed to supporting and adjusting OLAP cubes and ETL packages, ensuring data flow integrity and efficiency. I worked on ETL projects that involved reading data directly from SharePoint, optimizing data integration.
+    
+    - Demand Management and Project Documentation: I handled maintenance and development requests in BI projects, while documenting solutions comprehensively.
 
-    - Suporte e Ajustes de Cubos e Pacotes ETL: Contribuí com suporte e ajustes em cubos de análise e pacotes ETL, garantindo a integridade e eficiência dos fluxos de dados. Lidei com projetos de ETL que envolveram a leitura de dados diretamente do SharePoint, otimizando a integração de informações.
-
-    - Gestão de Demandas e Documentação de Projetos: Lidei com demandas de manutenção e desenvolvimento em projetos de BI, enquanto documentava soluções de forma abrangente.
-
-    Minha dedicação resultou em um impacto positivo, aprimorando operações e fornecendo soluções eficazes de Business Intelligence.
+    My dedication resulted in a positive impact, improving operations and providing effective Business Intelligence solutions.
 
     ### Database Administrator  
-    Criação de projetos de Business Intelligence com a SQL Server e Integration Services e desenvolvimento de Dashboards usando o Datazen.
-    Desenvolvimento de Relatórios e Dashboards com Mobile Report integrado ao Reporting Services 2016
+    Created Business Intelligence projects with SQL Server and Integration Services and developed Dashboards using Datazen.
+    Developed Reports and Dashboards with Mobile Report integrated into Reporting Services 2016.
 
-    Principais atividades desenvolvidas:
-    - Planejamento e implementação de painéis analíticos e relatórios;
-    - Instalação e configuração de ambientes OLAP utilizando o Microsoft Datazen;
-    - Instalação e configuração de ambientes OLAP utilizando o Microsoft Reporting Services 2016;
-    - Desenvolvimento e publicação de KPIs e Dashboards usando o Datazen Publisher e Mobile Report;
-    - Parametrização de Dashboards para análises de Drill Through;
-    - Segurança de objetos e dados usando o Datazen Server e Row Level Security.
-    - Pacotes ETL com Integration Services
-    - Importação de planilhas em Excel via FTP para SQL Server
-    - Migração de banco de dados, realizando o levantamento de todos os pré-requisitos e realizando as transformações necessárias.
-    - Desenvolvimento e manutenção de dados utilizando banco de dados na nuvem - Azure SQL Database
-    - Consultas e manipulação de dados;
-    - Controle de acesso dos usuários no Banco de Dados;
-    - Procedures/Triggers/Functions/Views
-    - Backup e Restore de Base de Dados
-    - Configuração de rotina de Backup
-    - Criação de job 
-    - Análise e criação de índice e otimização de consultas
-    - Liderança de equipe de sustentação, controlando e administrando as atividades do time de atividades diárias.
-    """)
+    Key Activities:
+    - Planning and implementation of analytical dashboards and reports;
+    - Installation and configuration of OLAP environments using Microsoft Datazen;
+    - Installation and configuration of OLAP environments using Microsoft Reporting Services 2016;
+    - Development and publication of KPIs and Dashboards using Datazen Publisher and Mobile Report;
+    - Dashboard parameterization for Drill Through analysis;
+    - Object and data security using Datazen Server and Row Level Security.
+    - ETL packages with Integration Services.
+    - Importing Excel spreadsheets via FTP into SQL Server.
+    - Database migration, gathering all prerequisites, and performing necessary transformations.
+    - Data development and maintenance using cloud databases - Azure SQL Database.
+    - Queries and data manipulation.
+    - Database user access control.
+    - Procedures/Triggers/Functions/Views.
+    - Backup and Restore of Databases.
+    - Backup routine configuration.
+    - Job creation.
+    - Analysis and creation of indexes and query optimization.
+    - Leadership of the support team, controlling and managing the daily activities of the team.
+""")
+
 
 # Configurando páginas
-page = st.sidebar.selectbox("Selecione a página", ["Sobre Mim", "Experiência"])
+page = st.sidebar.selectbox("Select a page", ["About Me", "Experience"])
 
-if page == "Sobre Mim":
+if page == "About Me":
     main_page()
-elif page == "Experiência":
+elif page == "Experience":
     experience_page()
