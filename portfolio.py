@@ -297,12 +297,14 @@ def main_page():
     img_path_s3="https://i.imghippo.com/files/kzNQ1558M.png"
     img_path_s4="https://i.imghippo.com/files/dfnm3816j.png"
     img_path_s5="https://i.imghippo.com/files/uVgh3793WnI.png"
+    img_path_s6="https://i.imghippo.com/files/AJoA4596cmU.png"
 
     link_s1="https://github.com/joaovilar/report_streamlit_dataset_dash"
     link_s2="https://github.com/joaovilar/face_detection"
     link_s3="https://github.com/joaovilar/app_streamlit_upload_file_azure"
     link_s4="https://github.com/joaovilar/sistema-de-cadastro-de-pessoa"
     link_s5="https://github.com/joaovilar/login_screen"
+    link_s6="https://data-vizualization-app.streamlit.app/"
 
 
     with col1:
@@ -326,6 +328,10 @@ def main_page():
     with col2:
         st.markdown(f'<div style="text-align: center;"><a href="{link_s5}" target="_blank"><img src="{img_path_s5}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
         st.markdown(f'<div style="text-align: center; font-style: italic;">Login application developed with Streamlit and connected to an Azure SQL database</div>', unsafe_allow_html=True)
+
+    with col3:
+        st.markdown(f'<div style="text-align: center;"><a href="{link_s6}" target="_blank"><img src="{img_path_s6}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Application that allows importing files and visualizing the data</div>', unsafe_allow_html=True)
 
 
 def experience_page():
