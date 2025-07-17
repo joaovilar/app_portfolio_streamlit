@@ -111,7 +111,7 @@ def main_page():
     col1, col2, col3 = st.columns(3)
 
     img_path1 = "https://i.imghippo.com/files/kkA2467Hp.jpg"
-    img_path2 = "https://i.imghippo.com/files/Aswz6308TwI.png"
+    img_path2 = "https://i.postimg.cc/sfnmbzgQ/imagem.jpg"
     img_path3 = "https://i.imghippo.com/files/hmaQ5302PSg.jpg"
 
     linkp1 ="https://app.powerbi.com/view?r=eyJrIjoiOWQxODI5NzEtODNiZi00MTI1LTlkZTktZDFmMWU0NDk2MzVlIiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9"
@@ -124,7 +124,7 @@ def main_page():
         st.markdown("<br>", unsafe_allow_html=True)
     with col2:
         st.markdown(f'<div style="text-align: center;"><a href="{linkp2}" target="_blank"><img src="{img_path2}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Financial Monitoring Dashboard', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">The dashboard provides a consolidated view of Bills, Norms, and Regulations that are currently in progress or in effect', unsafe_allow_html=True)
 
 
     with col3:
