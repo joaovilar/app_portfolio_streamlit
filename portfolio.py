@@ -115,7 +115,7 @@ def main_page():
     img_path3 = "https://i.imghippo.com/files/hmaQ5302PSg.jpg"
 
     linkp1 ="https://app.powerbi.com/view?r=eyJrIjoiOWQxODI5NzEtODNiZi00MTI1LTlkZTktZDFmMWU0NDk2MzVlIiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9"
-    linkp2=""
+    linkp2="https://i.postimg.cc/sfnmbzgQ/imagem.jpg"
     linkp3 = "https://app.powerbi.com/view?r=eyJrIjoiOTdlYzY3ZjMtMzU2Mi00YzViLWFhODYtNmM0OGVhMjNlZDk1IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9"
 
     with col1:
