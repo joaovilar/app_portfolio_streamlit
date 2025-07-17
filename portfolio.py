@@ -112,10 +112,10 @@ def main_page():
 
     img_path1 = "https://i.imghippo.com/files/kkA2467Hp.jpg"
     img_path2 = "https://i.imghippo.com/files/Aswz6308TwI.png"
-    img_path3 = "https://i.imghippo.com/files/ki4653MFs.png"
+    img_path3 = "https://i.imghippo.com/files/hmaQ5302PSg.jpg"
 
     linkp1 ="https://app.powerbi.com/view?r=eyJrIjoiOWQxODI5NzEtODNiZi00MTI1LTlkZTktZDFmMWU0NDk2MzVlIiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9"
-    linkp=""
+    linkp2=""
     linkp3 = "https://app.powerbi.com/view?r=eyJrIjoiOTdlYzY3ZjMtMzU2Mi00YzViLWFhODYtNmM0OGVhMjNlZDk1IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9"
 
     with col1:
@@ -123,7 +123,7 @@ def main_page():
         st.markdown(f'<div style="text-align: center; font-style: italic;">Delivery Center Operations Dashboard- Overview of operations, highlighting KPIs such as delivery rate and team performance', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
     with col2:
-        st.markdown(f'<div style="text-align: center;"><a href="{linkp1}" target="_blank"><img src="{img_path2}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center;"><a href="{linkp2}" target="_blank"><img src="{img_path2}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
         st.markdown(f'<div style="text-align: center; font-style: italic;">Financial Monitoring Dashboard', unsafe_allow_html=True)
 
 
