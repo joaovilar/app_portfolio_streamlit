@@ -168,7 +168,7 @@ def main_page():
 
     col1, col2, col3 = st.columns(3)
     img_pathd1 = "https://i.imghippo.com/files/MzNw9037WFM.png"
-    img_pathd2 = "https://i.imghippo.com/files/EGb4758qCg.png"
+    img_pathd2 = "https://i.postimg.cc/3xm7Rnyh/dtb2.jpg"
     img_pathd3 = "https://i.postimg.cc/pd5jpNfT/img-dtb.jpg"
     img_pathd4="https://i.imghippo.com/files/RrUa3259Gto.png"
 
