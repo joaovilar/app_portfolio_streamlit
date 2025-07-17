@@ -169,12 +169,12 @@ def main_page():
     col1, col2, col3 = st.columns(3)
     img_pathd1 = "https://i.imghippo.com/files/MzNw9037WFM.png"
     img_pathd2 = "https://i.imghippo.com/files/EGb4758qCg.png"
-    img_pathd3 = "https://i.imghippo.com/files/epj8217m.png"
+    img_pathd3 = "https://i.postimg.cc/QChjG5ND/img-dtb.jpg"
     img_pathd4="https://i.imghippo.com/files/RrUa3259Gto.png"
 
     linkd1 = "https://github.com/joaovilar/azuresql-to-datalake-medallion-dbdelta"
     linkd2 = "https://github.com/joaovilar/create_deltatable_databricks"
-    linkd3 = "https://i.postimg.cc/QChjG5ND/img-dtb.jpg"
+    linkd3 = "https://github.com/joaovilar/migration_mysql_to_databricks"
     linkd4="https://github.com/joaovilar/Data-from-AWS-S3-in-Azure-Databricks/blob/main/Getting%20Data%20from%20Bucket%20S3.ipynb"
 
     with col1:
