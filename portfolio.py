@@ -174,7 +174,7 @@ def main_page():
 
     linkd1 = "https://github.com/joaovilar/azuresql-to-datalake-medallion-dbdelta"
     linkd2 = "https://github.com/joaovilar/create_deltatable_databricks"
-    linkd3 = "https://github.com/joaovilar/migration_mysql_to_databricks"
+    linkd3 = "https://i.postimg.cc/QChjG5ND/img-dtb.jpg"
     linkd4="https://github.com/joaovilar/Data-from-AWS-S3-in-Azure-Databricks/blob/main/Getting%20Data%20from%20Bucket%20S3.ipynb"
 
     with col1:
