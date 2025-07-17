@@ -21,7 +21,7 @@ def main_page():
     with col1:
         st.markdown("""
             <h1>João Vilar Braga</h1>
-            <h4> Data Engineering | Business Intelligence | Azure Cloud | SQL, Python, Spark, Power BI, Databricks, Airflow, ADF, SSIS </h4>
+            <h4> Data Engineering | Business Intelligence | Azure Cloud | Databricks, SQL, Python, Spark, Power BI, Airflow, ADF, SSIS </h4>
         """, unsafe_allow_html=True)
 
     # Coluna para os ícones do GitHub e LinkedIn
@@ -110,7 +110,7 @@ def main_page():
     # Primeira fileira de 3 imagens
     col1, col2, col3 = st.columns(3)
 
-    img_path1 = "https://i.imghippo.com/files/RKsA5492oU.jpg"
+    img_path1 = "https://i.imghippo.com/files/kkA2467Hp.jpg"
     img_path2 = "https://i.imghippo.com/files/Aswz6308TwI.png"
     img_path3 = "https://i.imghippo.com/files/ki4653MFs.png"
 
