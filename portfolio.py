@@ -135,7 +135,7 @@ def main_page():
     col1, col2, col3 = st.columns(3)
 
     img_path4 = "https://i.postimg.cc/C1L90NTw/pw4.jpg"
-    img_path5 = "https://i.imghippo.com/files/Op5719xhw.png"
+    img_path5 = "https://i.postimg.cc/L8n6cTCS/imagem-1.jpg"
     img_path6 = "https://i.imghippo.com/files/gIL1941mjY.jpg"
 
     link4="https://app.powerbi.com/view?r=eyJrIjoiNjgyZDZkNWUtNDhmNy00ODNmLWFmYTgtZDBjMzBiMDEwMDk5IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9"
@@ -148,7 +148,7 @@ def main_page():
 
     with col2:
         st.markdown(f'<div style="text-align: center;"><a href="{link5}" target="_blank"><img src="{img_path5}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Pharmaceutical Product Distribution Dashboard</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Commissions Monitoring Panel</div>', unsafe_allow_html=True)
 
     with col3:
         st.markdown(f'<div style="text-align: center;"><a href="{link6}" target="_blank"><img src="{img_path6}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
