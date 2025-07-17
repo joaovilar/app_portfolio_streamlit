@@ -211,7 +211,7 @@ def main_page():
 
     col1, col2, col3 = st.columns(3)
 
-    img_path_air1="https://www.imghippo.com/i/MaA9943SI.jpg"
+    img_path_air1="https://i.imghippo.com/files/MaA9943SI.jpg"
     img_path_air2=""
     img_path_air3=""
 
