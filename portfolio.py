@@ -167,7 +167,7 @@ def main_page():
 
 
     col1, col2, col3 = st.columns(3)
-    img_pathd1 = "https://i.imghippo.com/files/MzNw9037WFM.png"
+    img_pathd1 = "https://i.postimg.cc/fWdh58K9/dbt1.jpg"
     img_pathd2 = "https://i.postimg.cc/3xm7Rnyh/dtb2.jpg"
     img_pathd3 = "https://i.postimg.cc/pd5jpNfT/img-dtb.jpg"
     img_pathd4="https://i.postimg.cc/hvk6RR1d/ss3-dtb.jpg"
@@ -343,7 +343,7 @@ def experience_page():
     st.write("""
     ### Senior Business Intelligence Analyst  
     **Stefanini Group · Full-time**  
-    **September 2022 - Present · 2 years 4 months (Home Office)**  
+    **September 2022 - Present · 2 years 10 months (Work From Home)**  
 
     I have made significant contributions to monitoring defaults at **Banco do Brasil Seguros**, providing greater visibility into **thousands of reais** and automating data structuring based on internal strategies.  
 
