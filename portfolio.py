@@ -136,7 +136,7 @@ def main_page():
 
     img_path4 = "https://i.imghippo.com/files/xTka3895aic.png"
     img_path5 = "https://i.imghippo.com/files/Op5719xhw.png"
-    img_path6 = "https://i.imghippo.com/files/OatX1265sU.jpg"
+    img_path6 = "https://i.imghippo.com/files/gIL1941mjY.jpg"
 
     link4="https://app.powerbi.com/view?r=eyJrIjoiNjgyZDZkNWUtNDhmNy00ODNmLWFmYTgtZDBjMzBiMDEwMDk5IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9"
     link5=""
