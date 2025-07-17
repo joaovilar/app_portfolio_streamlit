@@ -134,7 +134,7 @@ def main_page():
     # Segunda fileira de 3 imagens
     col1, col2, col3 = st.columns(3)
 
-    img_path4 = "https://i.imghippo.com/files/xTka3895aic.png"
+    img_path4 = "https://i.postimg.cc/C1L90NTw/pw4.jpg"
     img_path5 = "https://i.imghippo.com/files/Op5719xhw.png"
     img_path6 = "https://i.imghippo.com/files/gIL1941mjY.jpg"
 
