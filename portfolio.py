@@ -10,7 +10,7 @@ def main_page():
     # Criando a estrutura com fundo azul no topo e imagem no canto superior
     st.markdown("""
     <div style="background-color: #1e3a8a; padding: 20px; text-align: left; display: flex; align-items: center; width: 100%; height: 150px;border-radius: 15px;">
-        <img src="https://i.imghippo.com/files/SfTo5703ks.jpg" width="130" style="border-radius: 50%; margin-left: 20px;" />
+        <img src="https://i.postimg.cc/0NnzztLF/vilar.jpg" width="130" style="border-radius: 50%; margin-left: 20px;" />
     </div>
     """, unsafe_allow_html=True)
 
