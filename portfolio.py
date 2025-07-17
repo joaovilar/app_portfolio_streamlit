@@ -170,7 +170,7 @@ def main_page():
     img_pathd1 = "https://i.imghippo.com/files/MzNw9037WFM.png"
     img_pathd2 = "https://i.postimg.cc/3xm7Rnyh/dtb2.jpg"
     img_pathd3 = "https://i.postimg.cc/pd5jpNfT/img-dtb.jpg"
-    img_pathd4="https://i.imghippo.com/files/RrUa3259Gto.png"
+    img_pathd4="https://i.postimg.cc/hvk6RR1d/ss3-dtb.jpg"
 
     linkd1 = "https://github.com/joaovilar/azuresql-to-datalake-medallion-dbdelta"
     linkd2 = "https://github.com/joaovilar/create_deltatable_databricks"
