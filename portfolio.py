@@ -259,9 +259,9 @@ def main_page():
 
     col1, col2, col3 = st.columns(3)
 
-    img_path_p4 = "https://i.imghippo.com/files/byaq9041gq.png"
-    img_path_p5="https://i.imghippo.com/files/ARja7567heg.png"
-    img_path_p6="https://i.imghippo.com/files/zXTK8750qmA.png"
+    img_path_p4 = "https://i.postimg.cc/3wsCZkhG/azure-sql.jpg"
+    img_path_p5="https://i.postimg.cc/XqHbRSQw/consolidando.jpg"
+    img_path_p6="https://i.postimg.cc/8k3LSF9r/comparando-sql-python.jpg"
 
     link_py4 = "https://github.com/joaovilar/Python/blob/main/Python_Jupyter/files_azure_to_database.ipynb"
     link_py5="https://github.com/joaovilar/Python/blob/main/Python_Jupyter/Envia%20Consolidado%20Azure.ipynb"
