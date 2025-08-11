@@ -236,9 +236,9 @@ def main_page():
 
     col1, col2, col3 = st.columns(3)
 
-    img_path_py1="https://i.imghippo.com/files/eO5856QbM.png"
-    img_path_py2="https://i.imghippo.com/files/zYTU1086Ng.png"
-    img_path_py3="https://i.imghippo.com/files/VigW8461EoQ.png"
+    img_path_py1="https://i.postimg.cc/HLKLFMvS/manupulation.jpg"
+    img_path_py2="https://i.postimg.cc/KjQjqH6T/matplot-searborn.jpg"
+    img_path_py3="https://i.postimg.cc/Z5s7tY87/spark-google-colab.jpg"
 
     link_py1="https://github.com/joaovilar/Python/blob/main/Python_Jupyter/DataManipulation%20(SQL_Python).ipynb"
     link_py2="https://github.com/joaovilar/Python/blob/main/Google_Colab/MatplotLib_vs_Seaborn.ipynb"
