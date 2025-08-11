@@ -225,7 +225,7 @@ def main_page():
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
 <div style="border-radius: 15px; background-color: #d3d3d3; padding: 8px; display: flex; align-items: center; width: 100%; margin: auto; margin-bottom: 45px;">
-    <img src="https://i.imghippo.com/files/JJeU2683EVQ.png" style="width: 100px; margin-left: 10px; margin-right: 20px;" />
+    <img src="https://i.postimg.cc/vDwZqdB3/googlecolab-jupyter.png" style="width: 100px; margin-left: 10px; margin-right: 20px;" />
     <div style="text-align: center; flex: 1;">
         <h3>General Data Manipulation with Python - Visual Code, Jupyter Notebook, Google Colab</h3>
         <h6>Click on the image to be redirected</h6>
