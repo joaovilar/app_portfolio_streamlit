@@ -279,6 +279,15 @@ def main_page():
         st.markdown(f'<div style="text-align: center;"><a href="{link_py6}" target="_blank"><img src="{img_path_p6}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
         st.markdown(f'<div style="text-align: center; font-style: italic;">Comparison of queries using Python and SQL</div>', unsafe_allow_html=True)
 
+
+    col7, col8, col9 = st.columns(3)
+
+    img_path_p7 = "https://i.postimg.cc/MGxkhLL3/webscraping.jpg"
+
+    with col7:
+        st.markdown(f'<div style="text-align: center;"><a href="{img_path_p7}" target="_blank"><img src="{img_path_p7}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Webcraping using python, BeautiulSoup, requests</div>', unsafe_allow_html=True)
+
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
 <div style="border-radius: 15px; background-color: #ff7b5a; padding: 10px; display: flex; align-items: center; width: 100%; margin: auto; margin-bottom: 45px;">
@@ -300,7 +309,7 @@ def main_page():
     img_path_s6="https://i.imghippo.com/files/AJoA4596cmU.png"
 
     link_s1="https://github.com/joaovilar/report_streamlit_dataset_dash"
-    link_s2="https://github.com/joaovilar/face_detection"
+    link_s2="https://i.postimg.cc/6qByqzyB/facerego.jpg"
     link_s3="https://github.com/joaovilar/app_streamlit_upload_file_azure"
     link_s4="https://github.com/joaovilar/sistema-de-cadastro-de-pessoa"
     link_s5="https://github.com/joaovilar/login_screen"
@@ -343,7 +352,7 @@ def experience_page():
     st.write("""
     ### Senior Business Intelligence Analyst  
     **Stefanini Group · Full-time**  
-    **September 2022 - Present · 2 years 10 months (Work From Home)**  
+    **September 2022 - Present · 3 years 2 months (Work From Home)**  
 
     I have made significant contributions to monitoring defaults at **Banco do Brasil Seguros**, providing greater visibility into **thousands of reais** and automating data structuring based on internal strategies.  
 
