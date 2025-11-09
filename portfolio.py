@@ -7,21 +7,19 @@ st.set_page_config(page_title="Data Analysis Portfolio", layout="wide")
 
 # Função para definir as páginas
 def main_page():
-    # Aumentando a altura para 200px e adicionando alinhamento vertical centralizado para a imagem.
+    # Banner ajustado (Altura 200px e Borda Branca na Foto)
     st.markdown("""
     <div style="background-color: #1e3a8a; padding: 20px; text-align: left; display: flex; align-items: center; width: 100%; height: 200px; border-radius: 15px;">
         <img src="https://i.postimg.cc/0NnzztLF/vilar.jpg" width="130" style="border-radius: 50%; margin-left: 20px; border: 4px solid white;" />
     </div>
     """, unsafe_allow_html=True)
-    # Adicionei uma borda branca na imagem para destacá-la no banner.
 
     # Criando colunas para o nome e os botões
     col1, col2 = st.columns([3, 1])
 
     # Coluna para o nome
     with col1:
-        # Usando um título mais proeminente e com espaçamento negativo para subir o bloco de texto
-        # e preencher o espaço deixado pelo aumento da altura do banner
+        # AUMENTO da margem negativa para puxar o nome mais para cima (-80px)
         st.markdown("""
             <h1 style="margin-top: -80px; margin-bottom: 0px;">João Vilar Braga</h1>
             <h4 style="margin-top: 5px;"> Data Engineering | Business Intelligence | Azure Cloud | Databricks, SQL, Python, Spark, Power BI, Airflow, ADF, SSIS </h4>
@@ -29,9 +27,9 @@ def main_page():
 
     # Coluna para os ícones do GitHub e LinkedIn
     with col2:
-    # Botões com espaçamento e ajuste de margem para alinhamento
+    # AUMENTO da margem negativa nos ícones para alinhamento superior (-40px)
         st.markdown("""
-        <div style="margin-top: -20px;">
+        <div style="margin-top: -40px;">
             <a href="https://github.com/joaovilar" target="_blank" style="margin-right: 15px;">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="50" class="hover-image" />
             </a>
@@ -40,9 +38,7 @@ def main_page():
             </a>
         </div>
     """, unsafe_allow_html=True)
-
-    # O restante do código da função main_page() continua o mesmo
-    # ... (Seu código restante aqui)
+    
 
     # Adicionando o CSS para hover nas imagens
     st.markdown("""
