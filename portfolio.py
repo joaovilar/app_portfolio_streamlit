@@ -282,7 +282,7 @@ def main_page():
 
     col1, col2, col3 = st.columns(3)
 
-    img_path_p7 = "https://i.postimg.cc/MGxkhLL3/webscraping.jpg"
+    img_path_p7 = "https://i.postimg.cc/ZY3qtGs6/webscraping.jpg"
     img_path_p8=""
     img_path_p9=""
 
@@ -308,14 +308,14 @@ def main_page():
     col1, col2, col3 = st.columns(3)
 
     img_path_s1="https://i.imghippo.com/files/xqY2891gj.png"
-    img_path_s2="https://i.imghippo.com/files/peIm9743KRg.png"
+    img_path_s2="https://i.postimg.cc/6qByqzyB/facerego.jpg"
     img_path_s3="https://i.imghippo.com/files/kzNQ1558M.png"
     img_path_s4="https://i.imghippo.com/files/dfnm3816j.png"
     img_path_s5="https://i.imghippo.com/files/uVgh3793WnI.png"
     img_path_s6="https://i.imghippo.com/files/AJoA4596cmU.png"
 
     link_s1="https://github.com/joaovilar/report_streamlit_dataset_dash"
-    link_s2="https://i.postimg.cc/6qByqzyB/facerego.jpg"
+    link_s2="https://github.com/joaovilar/face_detection"
     link_s3="https://github.com/joaovilar/app_streamlit_upload_file_azure"
     link_s4="https://github.com/joaovilar/sistema-de-cadastro-de-pessoa"
     link_s5="https://github.com/joaovilar/login_screen"
