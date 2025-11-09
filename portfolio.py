@@ -292,7 +292,7 @@ def main_page():
 
     with col1:
         st.markdown(f'<div style="text-align: center;"><a href="{img_path_p7}" target="_blank"><img src="{img_path_p7}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
-        st.markdown(f'<div style="text-align: center; font-style: italic;">Webcraping using python, BeautiulSoup, requests</div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: center; font-style: italic;">Web scraping in Python using requests and BeautifulSoup fetching web page content it to extract desired data</div>', unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
