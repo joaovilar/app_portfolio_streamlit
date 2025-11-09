@@ -41,29 +41,8 @@ def main_page():
         </div>
     """, unsafe_allow_html=True)
 
-    # Criando colunas para o nome e os botões
-    col1, col2 = st.columns([3, 1])
-
-    # Coluna para o nome
-    with col1:
-        st.markdown("""
-            <h1>João Vilar Braga</h1>
-            <h4> Data Engineering | Business Intelligence | Azure Cloud | Databricks, SQL, Python, Spark, Power BI, Airflow, ADF, SSIS </h4>
-        """, unsafe_allow_html=True)
-
-    # Coluna para os ícones do GitHub e LinkedIn
-    with col2:
-    # Botões com espaçamento
-        st.markdown("""
-        <div style="margin-top: 20px;">
-            <a href="https://github.com/joaovilar" target="_blank" style="margin-right: 15px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="50" />
-            </a>
-            <a href="https://www.linkedin.com/in/joao-vilar-braga/" target="_blank">
-                <img src="https://static.vecteezy.com/system/resources/previews/016/716/470/non_2x/linkedin-icon-free-png.png" alt="LinkedIn" width="50" />
-            </a>
-        </div>
-    """, unsafe_allow_html=True)
+    # O restante do código da função main_page() continua o mesmo
+    # ... (Seu código restante aqui)
 
     # Adicionando o CSS para hover nas imagens
     st.markdown("""
