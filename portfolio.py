@@ -280,9 +280,15 @@ def main_page():
         st.markdown(f'<div style="text-align: center; font-style: italic;">Comparison of queries using Python and SQL</div>', unsafe_allow_html=True)
 
 
-    col7, col8, col9 = st.columns(3)
+    col1, col2, col3 = st.columns(3)
 
     img_path_p7 = "https://i.postimg.cc/MGxkhLL3/webscraping.jpg"
+    img_path_p8=""
+    img_path_p9=""
+
+    link_py7 = "https://github.com/joaovilar/Python/blob/main/webscrap.ipynb"
+    link_py8=""
+    link_py9=""
 
     with col7:
         st.markdown(f'<div style="text-align: center;"><a href="{img_path_p7}" target="_blank"><img src="{img_path_p7}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
