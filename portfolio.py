@@ -7,11 +7,38 @@ st.set_page_config(page_title="Data Analysis Portfolio", layout="wide")
 
 # Função para definir as páginas
 def main_page():
-    # Criando a estrutura com fundo azul no topo e imagem no canto superior
+    # Aumentando a altura para 200px e adicionando alinhamento vertical centralizado para a imagem.
     st.markdown("""
-    <div style="background-color: #1e3a8a; padding: 20px; text-align: left; display: flex; align-items: center; width: 100%; height: 150px;border-radius: 15px;">
-        <img src="https://i.postimg.cc/0NnzztLF/vilar.jpg" width="130" style="border-radius: 50%; margin-left: 20px;" />
+    <div style="background-color: #1e3a8a; padding: 20px; text-align: left; display: flex; align-items: center; width: 100%; height: 200px; border-radius: 15px;">
+        <img src="https://i.postimg.cc/0NnzztLF/vilar.jpg" width="130" style="border-radius: 50%; margin-left: 20px; border: 4px solid white;" />
     </div>
+    """, unsafe_allow_html=True)
+    # Adicionei uma borda branca na imagem para destacá-la no banner.
+
+    # Criando colunas para o nome e os botões
+    col1, col2 = st.columns([3, 1])
+
+    # Coluna para o nome
+    with col1:
+        # Usando um título mais proeminente e com espaçamento negativo para subir o bloco de texto
+        # e preencher o espaço deixado pelo aumento da altura do banner
+        st.markdown("""
+            <h1 style="margin-top: -80px; margin-bottom: 0px;">João Vilar Braga</h1>
+            <h4 style="margin-top: 5px;"> Data Engineering | Business Intelligence | Azure Cloud | Databricks, SQL, Python, Spark, Power BI, Airflow, ADF, SSIS </h4>
+        """, unsafe_allow_html=True)
+
+    # Coluna para os ícones do GitHub e LinkedIn
+    with col2:
+    # Botões com espaçamento e ajuste de margem para alinhamento
+        st.markdown("""
+        <div style="margin-top: -20px;">
+            <a href="https://github.com/joaovilar" target="_blank" style="margin-right: 15px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="50" class="hover-image" />
+            </a>
+            <a href="https://www.linkedin.com/in/joao-vilar-braga/" target="_blank">
+                <img src="https://static.vecteezy.com/system/resources/previews/016/716/470/non_2x/linkedin-icon-free-png.png" alt="LinkedIn" width="50" class="hover-image" />
+            </a>
+        </div>
     """, unsafe_allow_html=True)
 
     # Criando colunas para o nome e os botões
