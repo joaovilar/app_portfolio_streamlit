@@ -19,10 +19,9 @@ def main_page():
 
     # Coluna para o nome
     with col1:
-        # AUMENTO da margem negativa para puxar o nome mais para cima (-80px)
         st.markdown("""
-            <h1 style="margin-top: -80px; margin-bottom: 0px;">João Vilar Braga</h1>
-            <h4 style="margin-top: 5px;"> Data Engineering | Business Intelligence | Azure Cloud | Databricks, SQL, Python, Spark, Power BI, Airflow, ADF, SSIS </h4>
+            <h1>João Vilar Braga</h1>
+            <h4> Data Engineering | Business Intelligence | Azure Cloud | Databricks, SQL, Python, Spark, Power BI, Airflow, ADF, SSIS </h4>
         """, unsafe_allow_html=True)
 
     # Coluna para os ícones do GitHub e LinkedIn
