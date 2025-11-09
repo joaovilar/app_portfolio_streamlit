@@ -9,7 +9,7 @@ st.set_page_config(page_title="Data Analysis Portfolio", layout="wide")
 def main_page():
     # Banner ajustado (Altura 200px e Borda Branca na Foto)
     st.markdown("""
-    <div style="background-color: #1e3a8a; padding: 20px; text-align: left; display: flex; align-items: center; width: 100%; height: 200px; border-radius: 15px;">
+    <div style="background-color: #1e3a8a; padding: 20px; text-align: left; display: flex; align-items: center; width: 100%; height: 150px; border-radius: 15px;">
         <img src="https://i.postimg.cc/0NnzztLF/vilar.jpg" width="130" style="border-radius: 50%; margin-left: 20px; border: 4px solid white;" />
     </div>
     """, unsafe_allow_html=True)
@@ -29,7 +29,7 @@ def main_page():
     with col2:
     # AUMENTO da margem negativa nos ícones para alinhamento superior (-40px)
         st.markdown("""
-        <div style="margin-top: -40px;">
+        <div style="margin-top: 20px;">
             <a href="https://github.com/joaovilar" target="_blank" style="margin-right: 15px;">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="50" class="hover-image" />
             </a>
