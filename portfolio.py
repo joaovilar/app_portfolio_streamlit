@@ -290,7 +290,7 @@ def main_page():
     link_py8=""
     link_py9=""
 
-    with col7:
+    with col1:
         st.markdown(f'<div style="text-align: center;"><a href="{img_path_p7}" target="_blank"><img src="{img_path_p7}" width="400" class="hover-image"/></a></div>', unsafe_allow_html=True)
         st.markdown(f'<div style="text-align: center; font-style: italic;">Webcraping using python, BeautiulSoup, requests</div>', unsafe_allow_html=True)
 
