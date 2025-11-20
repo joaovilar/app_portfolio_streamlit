@@ -49,4 +49,4 @@ try:
     components.html(html_path, height=4500, scrolling=False)
     
 except FileNotFoundError:
-    st.error("Arquivo 'portfolio.html' não encontrado. Verifique se ele está na mesma pasta do app.py")
+    st.error("Arquivo 'portfolio.html' não encontrado. Verifique se ele está na mesma pasta do portfolio.py")
