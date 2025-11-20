@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Vilar Braga | Portfólio de Engenharia de Dados</title>
+    <style>
+        /* --- CSS Global e Layout --- */
+        :root {
+            --bg-color: #f4f7f9;
+            --sidebar-bg: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555555;
+            --blue-primary: #007bff;
+            --blue-dark: #1e3a8a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar {
+            width: 280px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid #e0e0e0;
+            padding: 20px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 10px 15px;
+            font-size: 1rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .nav-btn:hover {
+            background-color: #f0f2f6;
+        }
+
+        .nav-btn.active {
+            background-color: #e6f0ff;
+            color: var(--blue-primary);
+            font-weight: 600;
+        }
+
+        /* --- Conteúdo Principal --- */
+        .main-content {
+            flex: 1;
+            padding: 20px 40px;
+            margin-left: 280px;
+            max-width: calc(100% - 280px);
+            width: 100%;
+        }
+
+        /* --- Banner e Header --- */
+        .banner {
+            background-color: var(--blue-dark);
+            height: 180px;
+            border-radius: 0 0 15px 15px;
+            position: relative;
+            margin-bottom: 100px;
+            width: 100%;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            position: absolute;
+            bottom: -40px;
+            left: 40px;
+        }
+
+        .header-info {
+            position: absolute;
+            bottom: -120px;
+            left: 220px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .header-text h4 {
+            font-size: 1.1rem;
+            color: var(--blue-primary);
+            margin: 5px 0 0 0;
+            font-weight: 400;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Tipografia e Elementos Gerais --- */
+        hr {
+            border: 0;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+
+        h3.subheader {
+            color: #333;
+            border-bottom: 2px solid var(--blue-primary);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        /* --- Grid System --- */
+        .row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .col-half {
+            flex: 0 0 48%;
+        }
+
+        /* --- Skill Chips --- */
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: var(--blue-primary);
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        /* --- Aumentar tamanho dos textos --- */
+.header-text h1 {
+    font-size: 3rem;  /* Aumentado de 2.5rem */
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.header-text h4 {
+    font-size: 1.4rem;  /* Aumentado de 1.1rem */
+    color: var(--blue-primary);
+    margin: 10px 0 0 0;  /* Aumentado o margin-top */
+    font-weight: 400;
+}
+
+/* Aumentar texto do parágrafo "Sobre Mim" */
+#about p {
+    font-size: 1.2rem;  /* Texto maior */
+    line-height: 1.8;   /* Mais espaçamento entre linhas */
+    color: var(--text-secondary);
+}
+
+/* Aumentar texto das informações de contato */
+.row .col {
+    font-size: 1.1rem;  /* Texto maior para email e cidade */
+}
+
+/* Aumentar subtítulos */
+h3.subheader {
+    font-size: 1.5rem;  /* Aumentado */
+    color: #333;
+    border-bottom: 3px solid var(--blue-primary);  /* Linha mais grossa */
+    padding-bottom: 8px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+        /* --- Section Cards (Headers das áreas de projeto) --- */
+        .section-card {
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: white;
+            width: 100%;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-card img {
+            width: 50px;
+            margin-right: 20px;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+
+        .section-card h3 {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .section-card h6 {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: normal;
+        }
+
+        /* Cores Específicas dos Cards */
+        .powerbi-card {
+            background-color: #e6f0ff;
+            border-left: 5px solid #0078d4;
+        }
+
+        .databricks-card {
+            background-color: #fff8e1;
+            border-left: 5px solid #ffab00;
+        }
+
+        .airflow-card {
+            background-color: #e8f9e7;
+            border-left: 5px solid #0093dd;
+        }
+
+        .python-card {
+            background-color: #f0f4f9;
+            border-left: 5px solid #306998;
+        }
+
+        .streamlit-card {
+            background-color: #ffeded;
+            border-left: 5px solid #ff4b4b;
+        }
+
+        /* --- Project Grids --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .project-item {
+            text-align: center;
+        }
+
+        .project-item img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .project-item img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-desc {
+            font-style: italic;
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+
+        /* --- Experience Box --- */
+        .experience-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--blue-primary);
+            width: 100%;
+        }
+
+        .experience-box h3 {
+            color: var(--blue-primary);
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .experience-box p {
+            margin: 5px 0;
+        }
+
+        .experience-box strong {
+            color: #333;
+        }
+
+        .experience-box em {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .experience-box hr {
+            margin: 15px 0;
+            border-top: 0.5px solid #e0e0e0;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 1024px) {
+            .main-content {
+                padding: 20px 30px;
+                margin-left: 280px;
+                max-width: calc(100% - 280px);
+            }
+            
+            .header-info {
+                left: 200px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .sidebar {
+                width: 250px;
+            }
+            
+            .main-content {
+                margin-left: 250px;
+                max-width: calc(100% - 250px);
+                padding: 20px;
+            }
+            
+            .header-info {
+                left: 180px;
+            }
+            
+            .header-text h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 15px;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 15px;
+                max-width: 100%;
+            }
+            
+            .banner {
+                height: 120px;
+                margin-bottom: 140px;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+                bottom: -60px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .header-info {
+                bottom: -130px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0 15px;
+            }
+            
+            .social-icons {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-text h4 {
+                font-size: 1rem;
+            }
+            
+            .project-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 10px;
+            }
+            
+            .banner {
+                height: 100px;
+                margin-bottom: 120px;
+            }
+            
+            .profile-img {
+                width: 100px;
+                height: 100px;
+                bottom: -50px;
+            }
+            
+            .header-info {
+                bottom: -110px;
+            }
+            
+            .header-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .header-text h4 {
+                font-size: 0.9rem;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .section-card {
+                padding: 10px;
+                margin-bottom: 25px;
+            }
+            
+            .section-card img {
+                width: 40px;
+                margin-right: 15px;
+            }
+            
+            .experience-box {
+                padding: 15px;
+            }
+        }
+
+        /* Utility para esconder/mostrar páginas */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s;
+            width: 100%;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Garantir que imagens sejam responsivas */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2>Navegação</h2>
+        <button class="nav-btn active" onclick="showPage('about')">Sobre Mim</button>
+        <button class="nav-btn" onclick="showPage('experience')">Experiência</button>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- ABOUT ME PAGE -->
+        <div id="about" class="page active">
+            <!-- Banner Area -->
+            <div class="banner">
+                <img src="https://i.postimg.cc/0NnzztLF/vilar.jpg" alt="João Vilar Braga" class="profile-img">
+                <div class="header-info">
+                    <div class="header-text">
+                        <h1>João Vilar Braga</h1>
+                        <h4>Engenharia de Dados | Business Intelligence | Nuvem Azure | Databricks</h4>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/joaovilar" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+                        </a>
+                        <a href="https://www.linkedin.com/in/joao-vilar-braga/" target="_blank">
+                            <img src="https://static.vecteezy.com/system/resources/previews/016/716/470/non_2x/linkedin-icon-free-png.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subheader"> Sobre Mim</h3>
+            <p> Sou um <strong>entusiasta por tecnologia</strong> com <strong>8 anos</strong> de experiência na área de dados. Especializo-me na construção e otimização de pipelines de dados, abrangendo <strong>Extração, Transformação, Carga (ETL)</strong> e análise. Minha jornada inclui sólidos conhecimentos em bancos de dados relacionais, integração de dados e ferramentas de visualização como <strong>Power BI</strong>. Atualmente, estou expandindo minhas habilidades em arquiteturas de nuvem, focando no ecossistema <strong>Microsoft Azure</strong> e <strong>Databricks</strong>, criando soluções escaláveis e orientadas a resultados. </p>
+
+            <div class="row">
+                <div class="col"> <strong>E-mail:</strong> j.vilar12@gmail.com</div>
+                <div class="col"> <strong>Cidade:</strong> Brasília-DF, Brasil</div>
+            </div>
+            <br>
+
+            <h3 class="subheader"> Habilidades Técnicas</h3>
+            <div class="skill-container">
+                <div class="skill-category">
+                    <strong>Nuvem/Infra:</strong><br>
+                    <span class="skill-tag">Microsoft Azure</span>
+                    <span class="skill-tag">Azure Data Factory</span>
+                    <span class="skill-tag">Azure Data Lake</span>
+                    <span class="skill-tag">Databricks</span>
+                </div>
+                <div class="skill-category">
+                    <strong>ETL/Orquestração:</strong><br>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Airflow</span>
+                    <span class="skill-tag">SSIS</span>
+                </div>
+                <div class="skill-category">
+                    <strong>Bancos de Dados:</strong><br>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">SQL Server</span>
+                    <span class="skill-tag">Oracle</span>
+                    <span class="skill-tag">Google BigQuery</span>
+                    <span class="skill-tag">MongoDB (NoSQL)</span>
+                </div>
+                <div class="skill-category">
+                    <strong>Visualização de Dados:</strong><br>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Reporting Services</span>
+                    <span class="skill-tag">Looker</span>
+                    <span class="skill-tag">Qlik Sense</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h3 class="subheader"> Formação Acadêmica</h3>
+                    <ul style="color: var(--text-secondary);">
+                        <li><strong>Graduado em Análise e Desenvolvimento de Sistemas</strong></li>
+                        <li><strong>MBA em Análise de Dados com BI e Big Data</strong></li>
+                        <li><strong>Pós-graduação em Ethical Hacking e Cibersegurança</strong></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="subheader"> Certificações</h3>
+                    <ul style="color: var(--text-secondary);">
+                        <li><strong>Microsoft 70-762</strong> - Desenvolvimento de Banco de Dados SQL</li>
+                        <li><strong>Microsoft 70-461</strong> - Consultas no Microsoft SQL Server</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subheader"> Idiomas</h3>
+            <ul style="color: var(--text-secondary);">
+                <li>Português (Nativo)</li>
+                <li>Inglês (Intermediário - B1)</li>
+                <li>Espanhol (Básico)</li>
+            </ul>
+
+            <hr>
+
+            <!-- SECTION: Power BI -->
+            <div class="section-card powerbi-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+                <div>
+                    <h3>Dashboards Power BI</h3>
+                    <h6>Clique na imagem para ver o dashboard ao vivo</h6>
+                </div>
+            </div>
+            <div class="project-grid">
+                <div class="project-item">
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiOWQxODI5NzEtODNiZi00MTI1LTlkZTktZDFmMWU0NDk2MzVlIiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank">
+                        <img src="https://i.imghippo.com/files/kkA2467Hp.jpg" alt="Dashboard de Entregas">
+                    </a>
+                    <div class="project-desc">Dashboard de Operações do Centro de Distribuição</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://i.postimg.cc/sfnmbzgQ/imagem.jpg" target="_blank">
+                        <img src="https://i.postimg.cc/sfnmbzgQ/imagem.jpg" alt="Dashboard de Contas">
+                    </a>
+                    <div class="project-desc">Dashboard de Projetos de Lei, Normas e Regulamentos</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiOTdlYzY3ZjMtMzU2Mi00YzViLWFhODYtNmM0OGVhMjNlZDk1IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank">
+                        <img src="https://i.imghippo.com/files/hmaQ5302PSg.jpg" alt="People Analytics">
+                    </a>
+                    <div class="project-desc">Dashboard de Operações de People Analytics</div>
+                </div>
+                <!-- Row 2 -->
+                <div class="project-item">
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiNjgyZDZkNWUtNDhmNy00ODNmLWFmYTgtZDBjMzBiMDEwMDk5IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank">
+                        <img src="https://i.postimg.cc/C1L90NTw/pw4.jpg" alt="Relatório de Vendas">
+                    </a>
+                    <div class="project-desc">Relatório Geral de Vendas</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://i.postimg.cc/L8n6cTCS/imagem-1.jpg" target="_blank">
+                        <img src="https://i.postimg.cc/L8n6cTCS/imagem-1.jpg" alt="Comissões">
+                    </a>
+                    <div class="project-desc">Painel de Monitoramento de Comissões</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiN2E2NWJmOGItNGMxNS00NzhhLTgzNTItZGJiNWY0MTFkZWZhIiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank">
+                        <img src="https://i.imghippo.com/files/gIL1941mjY.jpg" alt="Vendas de Viagem">
+                    </a>
+                    <div class="project-desc">Dashboard de Vendas de Viagens</div>
+                </div>
+            </div>
+
+            <!-- SECTION: Databricks -->
+            <div class="section-card databricks-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Databricks_Logo.png/640px-Databricks_Logo.png" alt="Databricks">
+                <div>
+                    <h3>Scripts Databricks (Notebooks)</h3>
+                    <h6>Clique na imagem para ir ao GitHub</h6>
+                </div>
+            </div>
+            <div class="project-grid">
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/azuresql-to-datalake-medallion-dbdelta" target="_blank">
+                        <img src="https://i.postimg.cc/fWdh58K9/dbt1.jpg" alt="Arquitetura Lakehouse">
+                    </a>
+                    <div class="project-desc">Arquitetura Lakehouse: Azure SQL para Databricks</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/create_deltatable_databricks" target="_blank">
+                        <img src="https://i.postimg.cc/3xm7Rnyh/dtb2.jpg" alt="Tabela Delta">
+                    </a>
+                    <div class="project-desc">Criando tabelas Delta a partir do Data Lake</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/migration_mysql_to_databricks" target="_blank">
+                        <img src="https://i.postimg.cc/pd5jpNfT/img-dtb.jpg" alt="Migração">
+                    </a>
+                    <div class="project-desc">Migrando MySQL para Databricks Delta</div>
+                </div>
+                 <div class="project-item">
+                    <a href="https://github.com/joaovilar/Data-from-AWS-S3-in-Azure-Databricks/blob/main/Getting%20Data%20from%20Bucket%20S3.ipynb" target="_blank">
+                        <img src="https://i.postimg.cc/hvk6RR1d/ss3-dtb.jpg" alt="S3 para Databricks">
+                    </a>
+                    <div class="project-desc">Obtendo dados do Amazon S3 no Azure Databricks</div>
+                </div>
+            </div>
+
+<!-- SECTION: Airflow -->
+<div class="section-card airflow-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/AirflowLogo.png/220px-AirflowLogo.png" alt="Airflow">
+    <div>
+        <h3>Pipelines de Dados no Apache Airflow</h3>
+        <h6>Clique na imagem para ir ao GitHub</h6>
+    </div>
+</div>
+<div class="project-grid" style="grid-template-columns: repeat(auto-fit, minmax(230px, 380px)); justify-content: start;">
+    <div class="project-item">
+        <a href="https://github.com/joaovilar/Python/tree/main/Airflow" target="_blank">
+            <img src="https://i.imghippo.com/files/MaA9943SI.jpg" alt="Airflow DAG">
+        </a>
+        <div class="project-desc">Exemplo de DAG no Airflow para extração e transformação</div>
+    </div>
+</div>
+
+            <!-- SECTION: Python -->
+            <div class="section-card python-card">
+                <img src="https://i.postimg.cc/vDwZqdB3/googlecolab-jupyter.png" alt="Python">
+                <div>
+                    <h3>Manipulação de Dados com Python</h3>
+                    <h6>Scripts no VS Code, Jupyter Notebook, Google Colab</h6>
+                </div>
+            </div>
+            <div class="project-grid">
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/Python/blob/main/Python_Jupyter/DataManipulation%20(SQL_Python).ipynb" target="_blank">
+                        <img src="https://i.postimg.cc/HLKLFMvS/manupulation.jpg" alt="Manipulação de Dados">
+                    </a>
+                    <div class="project-desc">Manipulação de dados no Jupyter Notebook</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/Python/blob/main/Google_Colab/MatplotLib_vs_Seaborn.ipynb" target="_blank">
+                        <img src="https://i.postimg.cc/KjQjqH6T/matplot-searborn.jpg" alt="Matplotlib Seaborn">
+                    </a>
+                    <div class="project-desc">Gráficos com Matplotlib e Seaborn</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/Python/blob/main/Google_Colab/Use_Spark.ipynb" target="_blank">
+                        <img src="https://i.postimg.cc/Z5s7tY87/spark-google-colab.jpg" alt="Spark Colab">
+                    </a>
+                    <div class="project-desc">Executando scripts com Spark no Google Colab</div>
+                </div>
+                <!-- Row 2 -->
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/Python/blob/main/Python_Jupyter/files_azure_to_database.ipynb" target="_blank">
+                        <img src="https://i.postimg.cc/3wsCZkhG/azure-sql.jpg" alt="Azure SQL">
+                    </a>
+                    <div class="project-desc">Azure Data Lake para Azure SQL</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/Python/blob/main/Python_Jupyter/Envia%20Consolidado%20Azure.ipynb" target="_blank">
+                        <img src="https://i.postimg.cc/XqHbRSQw/consolidando.jpg" alt="Consolidado">
+                    </a>
+                    <div class="project-desc">Dataframe consolidado para Azure SQL</div>
+                </div>
+                 <div class="project-item">
+                    <a href="https://github.com/joaovilar/Python/blob/main/webscrap.ipynb" target="_blank">
+                        <img src="https://i.postimg.cc/ZY3qtGs6/webscraping.jpg" alt="Web Scraping">
+                    </a>
+                    <div class="project-desc">Web scraping em Python usando requests</div>
+                </div>
+            </div>
+            
+             <!-- SECTION: Streamlit -->
+            <div class="section-card streamlit-card">
+                <img src="https://seeklogo.com/images/S/streamlit-logo-B405F7E2FC-seeklogo.com.png" alt="Streamlit">
+                <div>
+                    <h3>Desenvolvimento Python com Streamlit</h3>
+                    <h6>Web Apps e Dashboards</h6>
+                </div>
+            </div>
+            <div class="project-grid">
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/report_streamlit_dataset_dash" target="_blank">
+                        <img src="https://i.imghippo.com/files/xqY2891gj.png" alt="Relatório Streamlit">
+                    </a>
+                    <div class="project-desc">Relatório e dashboard dinâmico</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/face_detection" target="_blank">
+                        <img src="https://i.postimg.cc/6qByqzyB/facerego.jpg" alt="Detecção Facial">
+                    </a>
+                    <div class="project-desc">Sistema de detecção facial (OpenCV)</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/app_streamlit_upload_file_azure" target="_blank">
+                        <img src="https://i.imghippo.com/files/kzNQ1558M.png" alt="Gerenciador de Arquivos">
+                    </a>
+                    <div class="project-desc">Gerenciador de arquivos para Azure Data Lake</div>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/joaovilar/sistema-de-cadastro-de-pessoa" target="_blank">
+                        <img src="https://i.imghippo.com/files/dfnm3816j.png" alt="Cadastro de Pessoas">
+                    </a>
+                    <div class="project-desc">App de cadastro de pessoas</div>
+                </div>
+                 <div class="project-item">
+                    <a href="https://data-vizualization-app.streamlit.app/" target="_blank">
+                        <img src="https://i.imghippo.com/files/AJoA4596cmU.png" alt="Visualização de Dados">
+                    </a>
+                    <div class="project-desc">App de visualização de dados</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- EXPERIENCE PAGE -->
+        <div id="experience" class="page">
+            <h1 style="margin-top: 0;">📜 Experiência Profissional</h1>
+            <hr style='border: 1px solid #007bff; margin: 20px 0 30px 0;'/>
+
+            <div class="experience-box">
+                <h3>Analista de Business Intelligence Sênior</h3>
+                <p><strong>Stefanini Group · Tempo Integral</strong></p>
+                <p><em>Setembro 2022 - Presente · 3 anos e 2 meses (Remoto)</em></p>
+                <hr>
+                <p>Contribuí significativamente para o monitoramento de inadimplência no <strong>Banco do Brasil Seguros</strong>, proporcionando maior visibilidade sobre <strong>milhares de reais</strong> e automatizando a estruturação de dados com base em estratégias internas.</p>
+                <p>Atendo demandas de diversos departamentos, oferecendo suporte no acompanhamento de processos e desenvolvendo <strong>consultas e scripts SQL</strong> em <strong>MySQL, PostgreSQL, Oracle e DB2</strong>, utilizando <strong>DBeaver</strong>.</p>
+                <p>Crio <strong>dashboards e relatórios dinâmicos no Power BI com linguagem M e DAX</strong> (Desktop, Services, e Report Server), proporcionando respostas claras para questões estratégicas do negócio e sugestões que possam ajudar na análise do cliente e criação de painéis utilizando Figma para uma experiência visual aprimorada, e também desenvolvo <strong>Jobs ETL em Python</strong>.</p>
+                <p>Participo ativamente das interações diárias com a equipe, garantindo <strong>alinhamento</strong> e <strong>entrega de resultados</strong> de acordo com as expectativas do produto.</p>
+            </div>
+
+            <div class="experience-box">
+                <h3>Analista de Business Intelligence</h3>
+                <p><strong>G4F Soluções Corporativas</strong></p>
+                <p><em>Dezembro 2019 - Setembro 2022 (2 anos e 6 meses)</em></p>
+                <hr>
+                <p>Contribuí significativamente para o Ministério da Economia em diversas áreas:</p>
+                <ul>
+                    <li><strong>Business Intelligence (BI):</strong> Desenvolvimento de relatórios interativos e intuitivos no Power BI, oferecendo insights estratégicos.</li>
+                    <li><strong>Processos ETL com SSIS:</strong> Construção de fluxos ETL eficientes usando SQL Server Integration Services (SSIS).</li>
+                    <li>Trabalhei no desenvolvimento de <strong>modelagem de dados</strong> relacional e dimensional (Star Schema), além de migração de dados.</li>
+                    <li><strong>Consultas e Scripts SQL:</strong> Consultas avançadas em SQL Server, PostgreSQL e MySQL, garantindo extração precisa de dados.</li>
+                    <li><strong>Ambiente Qlik Sense:</strong> Apoio ao ambiente On-premisse de servidores Qlik Sense de forma que atenda a necessidade das áreas/coordenações, na qual incluem atividades de gerenciamento dos servidores Qlik (ambiente QMC); Desenvolvimento e correção de visuais gráficos no Qlik Sense;</li>
+                </ul>
+            </div>
+
+            <div class="experience-box">
+                <h3>Analista de Sistemas BI</h3>
+                <p><strong>Indra | Minsait</strong></p>
+                <p><em>Novembro 2021 - Abril 2022</em></p>
+                <hr>
+                <p>Trabalhei em projetos de BI focados em:</p>
+                <ul>
+                    <li><strong>Scripts T-SQL e SSIS:</strong> Desenvolvimento de scripts eficientes em SQL Server e processos ETL.</li>
+                    <li><strong>Relatórios com Power BI:</strong> Criação de relatórios interativos para tomada de decisão estratégica.</li>
+                    <li><strong>Metodologia Scrum:</strong> Participação em entregas ágeis e colaborativas.</li>
+                    <li><strong>Documentação Detalhada:</strong> Criação de documentação para referência e uso futuro.</li>
+                </ul>
+            </div>
+
+            <div class="experience-box">
+                <h3>Analista de Business Intelligence Pleno</h3>
+                <p><strong>IOS Informática</strong></p>
+                <p><em>(1 ano e 6 meses)</em></p>
+                <hr>
+                <p>Desempenhei um papel crucial no atendimento às demandas de Business Intelligence para o Ministério da Economia. Minhas conquistas incluíram:</p>
+                <ul>
+                    <li><strong>Desenvolvimento de Dashboards e Relatórios com Power BI:</strong> Criei dashboards interativos e relatórios informativos no Power BI, fornecendo insights essenciais para decisões estratégicas.</li>
+                    <li><strong>Scripting T-SQL e Consultas de Banco de Dados:</strong> Escrevi scripts T-SQL em bancos de dados SQL Server e MySQL, agilizando a recuperação de dados.</li>
+                    <li><strong>Suporte e Ajustes para Cubos OLAP e Pacotes ETL:</strong> Contribuí para o suporte e ajustes de cubos OLAP e pacotes ETL, garantindo integridade e eficiência no fluxo de dados.</li>
+                    <li><strong>Gestão de Demandas e Documentação de Projetos:</strong> Lidei com solicitações de manutenção e desenvolvimento em projetos de BI, documentando soluções de forma abrangente.</li>
+                </ul>
+            </div>
+
+            <div class="experience-box">
+                <h3>Administrador de Banco de Dados</h3>
+                <p><strong>Compline</strong></p>
+                <p><em>(2 Anos e 6 meses)</em></p>
+                <hr>
+                <p>Criei projetos de Business Intelligence com SQL Server e Integration Services e desenvolvi Dashboards usando Datazen. Desenvolvi Relatórios e Dashboards com Mobile Report integrado ao Reporting Services 2016.</p>
+                <strong>Principais Atividades:</strong>
+                <ul>
+                    <li>Planejamento e implementação de dashboards e relatórios analíticos;</li>
+                    <li>Instalação e configuração de ambientes OLAP (Microsoft Datazen e Reporting Services 2016);</li>
+                    <li>Desenvolvimento e publicação de KPIs e Dashboards;</li>
+                    <li>Parametrização de Dashboard para análise Drill Through e segurança (Row Level Security);</li>
+                    <li>Pacotes ETL com Integration Services;</li>
+                    <li>Importação de planilhas Excel via FTP para SQL Server;</li>
+                    <li>Migração de banco de dados, levantamento de pré-requisitos e realização das transformações necessárias;</li>
+                    <li>Desenvolvimento e manutenção de dados usando bancos de dados em nuvem - Azure SQL Database;</li>
+                    <li>Consultas, manipulação de dados, controle de acesso de usuários;</li>
+                    <li>Backup e Restore de Bancos de Dados, configuração de rotinas, criação de Jobs;</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            // Esconder todas as páginas
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Remover classe active de todos os botões
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Mostrar a página selecionada
+            document.getElementById(pageId).classList.add('active');
+
+            // Ativar o botão clicado
+            const btns = document.querySelectorAll('.nav-btn');
+            if (pageId === 'about') {
+                btns[0].classList.add('active');
+            } else {
+                btns[1].classList.add('active');
+            }
+
+            // Scroll para o topo
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
