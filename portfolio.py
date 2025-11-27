@@ -46,7 +46,7 @@ try:
     
     # Renderizar no Streamlit
     # A altura (height) deve ser grande o suficiente para caber seu site sem barra de rolagem interna dupla
-    components.html(html_path, height=5500, scrolling=False)
+    components.html(html_path, height=5500, scrolling=True)
     
 except FileNotFoundError:
     st.error("Arquivo 'portfolio.html' não encontrado. Verifique se ele está na mesma pasta do portfolio.py")
