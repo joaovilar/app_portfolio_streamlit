@@ -1,1068 +1,609 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Vilar Braga | Portfólio de Engenharia de Dados</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <title>João Vilar Braga | Engenheiro de Dados Sênior | Cientista de Dados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* --- CSS Global e Layout (Dark Mode Moderno) --- */
-        :root {
-            --bg-main: #0a192f; /* Azul marinho muito escuro */
-            --sidebar-bg: #112240; /* Um tom ligeiramente mais claro */
-            --bg-card: #172a45; /* Fundo para cards e seções */
-            --text-primary: #e6f1ff; /* Branco suave para títulos */
-            --text-secondary: #8892b0; /* Cinza azulado para textos */
-            --color-accent: #64ffda; /* Verde-azulado neon para destaque */
-            --font-main: 'Inter', sans-serif;
-            --border-radius: 8px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
         body {
-            margin: 0;
-            font-family: var(--font-main);
-            background-color: var(--bg-main);
-            color: var(--text-secondary);
-            display: block;
-            min-height: 100vh;
-            overflow-x: hidden;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s;
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
         }
 
-        /* --- Sidebar --- */
-        .sidebar {
-            width: 260px;
-            background-color: var(--sidebar-bg);
-            border-right: none;
-            padding: 40px 25px;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            height: 100vh;
-            left: 0;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        .service-card:hover {
+            transform: translateY(-8px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .sidebar h2 {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: var(--color-accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
-
-        .nav-btn {
-            background: none;
-            border: none;
-            text-align: left;
-            padding: 12px 15px;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            border-radius: var(--border-radius);
-            margin-bottom: 10px;
-            transition: all 0.3s;
-            width: 100%;
-            font-family: var(--font-main);
-            font-weight: 500;
-        }
-
-        .nav-btn:hover {
-            color: var(--color-accent);
-            background-color: rgba(100, 255, 218, 0.1);
-        }
-
-        .nav-btn.active {
-            background-color: rgba(100, 255, 218, 0.1);
-            color: var(--color-accent);
-            font-weight: 600;
-        }
-
-        /* --- Conteúdo Principal --- */
-        .main-content {
-            flex: 1;
-            padding: 30px 40px;
-            margin-left: 260px;
-            max-width: calc(100% - 260px);
-            width: 100%;
-        }
-
-        /* --- Banner e Header (Redesenhado) --- */
-        .banner {
-            background: linear-gradient(to right, #0f203d, #172a45); /* Gradiente sutil */
-            height: 220px;
-            border-radius: 0 0 12px 12px;
-            position: relative;
-            margin-bottom: 120px;
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
-        }
-
-        .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid var(--bg-main); /* Borda da cor do fundo */
-            object-fit: cover;
-            position: absolute;
-            bottom: -50px;
-            left: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            filter: grayscale(20%); /* Efeito sutil */
-            transition: filter 0.3s;
-        }
-        
-        .profile-img:hover {
-            filter: grayscale(0%);
-        }
-
-        .header-info {
-            position: absolute;
-            bottom: -100px;
-            left: 240px;
-            right: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-        }
-
-        .header-text h1 {
-            font-size: 3rem;
-            margin: 0;
-            color: var(--text-primary);
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .header-text h4 {
-            font-size: 1.3rem;
-            color: var(--color-accent);
-            margin: 10px 0 0 0;
-            font-weight: 500;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
-
-        .social-icons img {
-            width: 36px;
-            height: 36px;
-            transition: transform 0.3s, filter 0.3s;
-            filter: invert(90%) sepia(10%) saturate(180%) hue-rotate(130deg) brightness(95%) contrast(90%); /* Torna os ícones brancos/claros */
-        }
-
-        .social-icons img:hover {
-            transform: scale(1.1);
-            filter: none; /* Remove o filtro para mostrar a cor original ao passar o mouse (se tiver cor) */
-        }
-
-        /* --- Tipografia e Elementos Gerais --- */
-        hr {
-            border: 0;
-            border-top: 1px solid #233554; /* Cor da linha */
-            margin: 40px 0;
-        }
-
-        h3.subheader {
-            color: var(--text-primary);
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-top: 50px;
-            margin-bottom: 25px;
-            font-size: 1.7rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-        
-        h3.subheader::after {
-            content: "";
-            display: block;
-            height: 1px;
-            flex: 1;
-            background-color: #233554;
-            margin-left: 20px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        strong {
-            color: var(--color-accent);
-            font-weight: 600;
-        }
-
-        /* --- Grid System --- */
-        .row {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            background-color: var(--bg-card);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .col {
-            flex: 1;
-            min-width: 300px;
-            font-size: 1rem;
-        }
-        
-        .col h3.subheader {
-            margin-top: 0;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-        
-        .col h3.subheader::after {
-            display: none;
-        }
-
-        /* --- Skill Chips (Tags) --- */
-        .skill-container {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .skill-category {
-            margin-bottom: 20px;
-        }
-        
-        .skill-category strong {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            background-color: rgba(100, 255, 218, 0.05);
-            color: var(--color-accent);
-            padding: 6px 12px;
-            border-radius: 4px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            transition: all 0.3s;
-            font-family: var(--font-main);
-        }
-        
-        .skill-tag:hover {
-            background-color: rgba(100, 255, 218, 0.15);
-            transform: translateY(-2px);
-        }
-
-        /* --- Section Cards (Headers das áreas de projeto) --- */
-        .section-card {
-            border-radius: var(--border-radius);
-            padding: 20px 25px;
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: var(--bg-card);
-            width: 100%;
-            border: 1px solid transparent;
-        }
-
-        .section-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .section-card img {
-            width: 60px;
-            margin-right: 25px;
-            margin-left: 5px;
-            flex-shrink: 0;
-        }
-
-        .section-card h3 {
-            margin: 0;
-            color: var(--text-primary);
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .section-card h6 {
-            margin: 5px 0 0 0;
-            color: var(--color-accent);
-            font-size: 0.95rem;
-            font-weight: 500;
-            font-family: var(--font-main);
-        }
-
-        /* Cores Específicas dos Cards (Bordas Sutis) */
-        .powerbi-card { border-left: 4px solid #0078d4; }
-        .databricks-card { border-left: 4px solid #ffab00; }
-        .airflow-card { border-left: 4px solid #0093dd; }
-        .python-card { border-left: 4px solid #306998; }
-        .streamlit-card { border-left: 4px solid #ff4b4b; }
-
-        /* --- Project Grids --- */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-            width: 100%;
-        }
-
-        .project-item {
-            text-align: left;
-            background-color: var(--bg-card);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-item:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-item a {
-            display: block;
-            overflow: hidden;
-        }
-
-        .project-item img {
-            width: 100%;
-            border-radius: 0;
-            transition: transform 0.3s, opacity 0.3s;
-            cursor: pointer;
-            margin-bottom: 0;
-            box-shadow: none;
-            opacity: 0.8;
-            object-fit: cover;
-            height: 200px; /* Altura fixa para uniformidade */
-        }
-        
-        .project-item:hover img {
+        .project-card:hover img {
             transform: scale(1.05);
-            opacity: 1;
         }
 
-        .project-desc {
-            font-style: normal;
-            font-size: 1rem;
-            color: var(--text-primary);
-            padding: 15px;
-            font-weight: 600;
-            background-color: var(--bg-card);
-            border-top: 1px solid #233554;
-        }
-
-        /* --- Experience Box --- */
-        .experience-box {
-            background-color: var(--bg-card);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            border-left: 4px solid var(--color-accent);
-            width: 100%;
-            transition: transform 0.3s;
-        }
-        
-        .experience-box:hover {
-            transform: translateX(5px);
-        }
-
-        .experience-box h3 {
-            color: var(--text-primary);
-            margin-top: 0;
-            margin-bottom: 5px;
-            font-size: 1.5rem;
-        }
-
-        .experience-box p {
-            margin: 10px 0;
-            font-size: 1rem;
-        }
-
-        .experience-box strong {
-            color: var(--color-accent);
-        }
-
-        .experience-box em {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            font-style: normal;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .experience-box hr {
-            margin: 20px 0;
-            border-top: 1px solid #233554;
-        }
-        
-        .experience-box ul {
-            padding-left: 20px;
-        }
-        
-        .experience-box li {
-            margin-bottom: 10px;
-        }
-
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 1024px) {
-            .main-content {
-                padding: 20px 30px;
-                margin-left: 260px;
-                max-width: calc(100% - 260px);
-            }
-            
-            .header-info {
-                left: 220px;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .sidebar {
-                width: 240px;
-            }
-            
-            .main-content {
-                margin-left: 240px;
-                max-width: calc(100% - 240px);
-                padding: 20px;
-            }
-            
-            .header-info {
-                left: 200px;
-            }
-            
-            .header-text h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                border-right: none;
-                border-bottom: 1px solid #233554;
-                padding: 20px;
-                box-shadow: none;
-            }
-            
-            .main-content {
-                margin-left: 0;
-                padding: 20px;
-                max-width: 100%;
-            }
-            
-            .banner {
-                height: 150px;
-                margin-bottom: 150px;
-            }
-            
-            .profile-img {
-                width: 130px;
-                height: 130px;
-                bottom: -65px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .header-info {
-                bottom: -140px;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 0 15px;
-            }
-            
-            .social-icons {
-                margin-top: 15px;
-                justify-content: center;
-            }
-            
-            .header-text h1 {
-                font-size: 2rem;
-            }
-            
-            .header-text h4 {
-                font-size: 1.1rem;
-            }
-            
-            .project-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-content {
-                padding: 15px;
-            }
-            
-            .banner {
-                height: 120px;
-                margin-bottom: 130px;
-            }
-            
-            .profile-img {
-                width: 110px;
-                height: 110px;
-                bottom: -55px;
-            }
-            
-            .header-info {
-                bottom: -120px;
-            }
-            
-            .header-text h1 {
-                font-size: 1.8rem;
-            }
-            
-            .header-text h4 {
-                font-size: 1rem;
-            }
-            
-            .project-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .section-card {
-                padding: 15px;
-                margin-bottom: 25px;
-            }
-            
-            .section-card img {
-                width: 45px;
-                margin-right: 15px;
-            }
-            
-            .experience-box {
-                padding: 20px;
-            }
-        }
-
-        /* Utility para esconder/mostrar páginas */
-        .page {
-            display: none;
+        .section-fade {
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            width: 100%;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
         }
 
-        .page.active {
-            display: block;
+        .section-fade.visible {
             opacity: 1;
-        }
-
-        /* Garantir que imagens sejam responsivas */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* Cor da seleção de texto */
-        ::selection {
-            background-color: rgba(100, 255, 218, 0.3);
-            color: var(--color-accent);
-        }
-        
-        /* Estilização da Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--bg-main);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #233554;
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #304769;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body>
-    <aside class="sidebar">
-        <h2>Navegação</h2>
-        <button class="nav-btn active" onclick="showPage('about')">Sobre Mim</button>
-        <button class="nav-btn" onclick="showPage('experience')">Experiência</button>
-    </aside>
+<body class="bg-slate-50 text-slate-900">
 
-    <main class="main-content">
-        <div id="about" class="page active">
-            <div class="banner">
-                <img src="https://i.postimg.cc/0NnzztLF/vilar.jpg" alt="João Vilar Braga" class="profile-img">
-                <div class="header-info">
-                    <div class="header-text">
-                        <h1>João Vilar Braga</h1>
-                        <h4>Engenharia de Dados | Análise de Dados | Nuvem Azure | Databricks</h4>
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black text-blue-700 tracking-tighter italic">JOAOVILAR<span class="text-slate-900">.DATA</span></div>
+            <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wide">
+                <a href="#inicio" class="hover:text-blue-600 transition">Início</a>
+                <a href="#sobre" class="hover:text-blue-600 transition">Sobre</a>
+                <a href="#formacao" class="hover:text-blue-600 transition">Formação</a>
+                <a href="#portfolio" class="hover:text-blue-600 transition">Projetos</a>
+                <a href="#experiencia" class="hover:text-blue-600 transition">Trajetória</a>
+                <a href="mailto:j.vilar12@gmail.com" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition shadow-md shadow-blue-200">Contato</a>
+            </div>
+            <div class="md:hidden">
+                <i class="fa-solid fa-bars text-2xl cursor-pointer"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <span class="text-blue-600 font-bold tracking-widest uppercase text-xs mb-4 block bg-blue-50 w-fit px-3 py-1 rounded-full">Senior Data Engineer</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 text-slate-900">Arquitetando o futuro através dos <span class="text-blue-600">Dados.</span></h1>
+                <p class="text-xl text-slate-600 mb-8 max-w-lg leading-relaxed">
+                    Especialista em dados com 9 anos de experiência transformando dados brutos em inteligência estratégica.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#portfolio" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl hover:bg-blue-700 transition-all flex items-center">
+                        Ver Portfólio <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                    <div class="flex items-center space-x-4 ml-2">
+                        <a href="https://www.linkedin.com/in/joao-vilar-braga/" target="_blank" class="text-slate-400 hover:text-blue-600 text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/joaovilar" target="_blank" class="text-slate-400 hover:text-slate-900 text-2xl transition"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <div class="social-icons">
-                        <a href="https://github.com/joaovilar" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
-                        </a>
-                        <a href="https://www.linkedin.com/in/joao-vilar-braga/" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                </div>
+            </div>
+            <div class="md:w-1/2 relative flex justify-center">
+                <div class="relative w-72 h-72 md:w-[450px] md:h-[450px]">
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-blue-100 rounded-full blur-2xl opacity-60"></div>
+                    <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-indigo-100 rounded-full blur-2xl opacity-60"></div>
+                    
+                    <div class="w-full h-full rounded-[40px] overflow-hidden shadow-2xl border-8 border-white transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://i.postimg.cc/K841BYd9/Whats-App-Image-2025-08-01-at-09-51-28.jpg" alt="João Vilar Braga" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-4xl font-bold mb-8 text-slate-900 flex items-center">
+                        <span class="w-12 h-1 bg-blue-600 mr-4 rounded-full"></span> Sobre Mim
+                    </h2>
+                    <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
+                        <p>Sou um entusiasta por tecnologia com mais de <strong>9 anos</strong> de bagagem na área de dados. Especializo-me na arquitetura de pipelines robustos, cobrindo todo o ciclo de vida: ETL e análise avançada.</p>
+                        <p>Atualmente, foco minha expertise no ecossistema <strong>Microsoft Azure e Databricks</strong>, garantindo que grandes volumes de informação se tornem ativos de negócio.</p>
+                        <p class="p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-xl italic">
+                            Diferencial: Estou expandindo fronteiras para Desenvolvimento Web e Bioinformática, integrando Python com frameworks modernos como Streamlit, FastAPI e Flask.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-6 mt-10">
+                        <div class="text-center p-4 bg-blue-50 rounded-2xl">
+                            <span class="block text-3xl font-black text-blue-600">9+</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Anos Exp.</span>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-2xl">
+                            <span class="block text-3xl font-black text-blue-600">Full</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Stack Data</span>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-2xl">
+                            <span class="block text-3xl font-black text-blue-600">SQL</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Certified</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100 flex flex-col items-center text-center">
+                            <i class="fa-solid fa-cloud text-3xl text-blue-600 mb-3"></i>
+                            <span class="font-bold text-sm">Cloud Data Lake</span>
+                        </div>
+                        <div class="p-6 bg-blue-600 rounded-3xl text-white flex flex-col items-center text-center shadow-lg shadow-blue-200">
+                            <i class="fa-solid fa-database text-3xl mb-3"></i>
+                            <span class="font-bold text-sm">Databricks Delta</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-10">
+                        <div class="p-6 bg-slate-900 rounded-3xl text-white flex flex-col items-center text-center">
+                            <i class="fa-brands fa-python text-3xl mb-3 text-blue-400"></i>
+                            <span class="font-bold text-sm">Python / Apps</span>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100 flex flex-col items-center text-center">
+                            <i class="fa-solid fa-chart-pie text-3xl text-indigo-600 mb-3"></i>
+                            <span class="font-bold text-sm">BI Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Carreira & Certificações -->
+    <section id="formacao" class="py-24 bg-slate-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center">Formação & Reconhecimento</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <h3 class="text-xl font-black text-slate-400 uppercase tracking-widest mb-6 flex items-center">
+                        <i class="fa-solid fa-graduation-cap mr-3"></i> Educação
+                    </h3>
+                    <div class="relative pl-8 border-l-2 border-blue-200 space-y-12">
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-0 w-5 h-5 bg-blue-600 rounded-full border-4 border-white shadow-sm"></div>
+                            <h4 class="text-xl font-bold">MBA em Análise de Dados</h4>
+                            <p class="text-blue-600 font-semibold mb-2 text-sm">BI e Big Data</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-0 w-5 h-5 bg-slate-300 rounded-full border-4 border-white shadow-sm"></div>
+                            <h4 class="text-xl font-bold">Pós-graduação em Cibersegurança</h4>
+                            <p class="text-blue-600 font-semibold mb-2 text-sm">Ethical Hacking</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-0 w-5 h-5 bg-slate-300 rounded-full border-4 border-white shadow-sm"></div>
+                            <h4 class="text-xl font-bold">Graduação ADS</h4>
+                            <p class="text-blue-600 font-semibold mb-2 text-sm">Análise e Desenvolvimento de Sistemas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <h3 class="text-xl font-black text-slate-400 uppercase tracking-widest mb-6 flex items-center">
+                        <i class="fa-solid fa-certificate mr-3"></i> Certificações Microsoft
+                    </h3>
+                    <div class="grid gap-4">
+                        <div class="p-6 bg-white rounded-2xl border border-slate-100 flex items-center space-x-6 hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Microsoft 70-762</h4>
+                                <p class="text-slate-500 text-sm">Developing SQL Databases</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-white rounded-2xl border border-slate-100 flex items-center space-x-6 hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Microsoft 70-461</h4>
+                                <p class="text-slate-500 text-sm">Querying Microsoft SQL Server</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Portfólio de Projetos -->
+    <section id="portfolio" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Portfólio de Projetos</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Soluções integradas de Engenharia, Analytics e Desenvolvimento Web.</p>
+            </div>
+
+
+            <!-- Categoria: Bioinformática -->
+            <div class="mb-20">
+                <div class="flex items-center mb-10">
+                    <div class="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center text-white text-2xl mr-4 shadow-lg shadow-emerald-100">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Python para Bioinformática</h3>
+                        <p class="text-slate-400 text-sm">BioPython, análise genômica, FASTA/GenBank</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="service-card p-6 bg-emerald-50/30 rounded-3xl border border-emerald-100 group">
+                        <div class="flex justify-between items-start mb-6">
+                            <i class="fa-solid fa-dna text-4xl text-emerald-300 group-hover:text-emerald-600 transition"></i>
+                            <span class="text-[10px] font-bold uppercase bg-emerald-100 text-emerald-700 px-2 py-1 rounded">Science</span>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3">Sequências Biológicas</h4>
+                        <p class="text-slate-500 text-sm mb-6">Processamento de sequências biológicas e análise genômica utilizando bibliotecas especializadas.</p>
+                        <a href="https://github.com/joaovilar/Python/blob/main/Bioinformatica/Sequencias_Biologicas.py" target="_blank" class="text-emerald-600 font-bold text-sm flex items-center group-hover:underline">
+                            Ver Script <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <h3 class="subheader"> Sobre Mim</h3>
-            <p> Sou um <strong>entusiasta por tecnologia</strong> com <strong>9 anos</strong> de experiência na área de dados. 
-                Especializo-me na construção e otimização de pipelines de dados, abrangendo <strong>Extração, Transformação, Carga (ETL)</strong> e análise. 
-                Minha jornada inclui sólidos conhecimentos em bancos de dados relacionais, integração de dados e ferramentas de visualização como <strong>Power BI</strong>. 
-                <p>Atualmente, estou em expansão ativa de conhecimentos para as áreas de Ciência de Dados e Bioinformática, combinando minha base em engenharia de dados com abordagens analíticas avançadas usando <strong>python (pandas, scikit-learn, biopython).</strong> 
-                Busco aplicar modelagem estatística e análise de padrões a dados biológicos e genômicos, como expressão gênica, sequenciamento e anotações funcionais.</p>
-                Atualmente, estou expandindo minhas habilidades em arquiteturas de nuvem, focando no ecossistema <strong>Microsoft Azure</strong> e <strong>Databricks</strong>, 
-                criando soluções escaláveis e orientadas a resultados. </p>
 
-            <div class="row">
-                <div class="col" style="color: var(--text-secondary);">
-                    <strong style="color: var(--text-primary);">E-mail:</strong> j.vilar12@gmail.com<br><br>
-                    <strong style="color: var(--text-primary);">Cidade:</strong> Brasília-DF, Brasil
+            <div class="mb-20">
+                <div class="flex items-center mb-10">
+                    <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white text-2xl mr-4 shadow-lg shadow-blue-100">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Desenvolvimento Web & Apps (Python)</h3>
+                        <p class="text-slate-400 text-sm">Streamlit, FastAPI, Flask e Visão Computacional</p>
+                    </div>
                 </div>
-            </div>
-            <br>
 
-            <h3 class="subheader"> Habilidades Técnicas</h3>
-            <div class="skill-container">
-                <div class="skill-category">
-                    <strong>Nuvem/Infra:</strong>
-                    <span class="skill-tag">Microsoft Azure</span>
-                    <span class="skill-tag">Azure Data Lake</span>
-                    <span class="skill-tag">Databricks</span>
-                </div>
-                <div class="skill-category">
-                    <strong>ETL/Orquestração:</strong>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">Airflow</span>
-                   <span class="skill-tag">Azure Data Factory</span>
-                    <span class="skill-tag">SSIS</span>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="group project-card">
+                        <div class="relative h-52 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                            <img src="https://i.postimg.cc/L4Yck5Ky/tela-login.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Tela Login">
+                            <a href="https://github.com/joaovilar/login_painel" target="_blank" class="absolute inset-0 bg-blue-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Ver Repositório</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Autenticação MySQL & Dashboard</h4>
+                        <span class="text-[10px] font-bold uppercase text-blue-600">Flask / Full Stack</span>
+                    </div>
 
-                </div>
-                <div class="skill-category">
-                    <strong>Bancos de Dados:</strong>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">SQL Server</span>
-                    <span class="skill-tag">Oracle</span>
-                    <span class="skill-tag">Google BigQuery</span>
-                    <span class="skill-tag">MongoDB (NoSQL)</span>
-                </div>
-                <div class="skill-category">
-                    <strong>Visualização de Dados:</strong>
-                    <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">Reporting Services</span>
-                    <span class="skill-tag">Looker</span>
-                    <span class="skill-tag">Qlik Sense</span>
-                </div>
-            </div>
+                    <div class="group project-card">
+                        <div class="relative h-52 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                            <img src="https://i.postimg.cc/6qByqzyB/facerego.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Detecção Facial">
+                            <a href="https://github.com/joaovilar/face_detection" target="_blank" class="absolute inset-0 bg-blue-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Ver Projeto</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Sistema de Detecção Facial (OpenCV)</h4>
+                        <span class="text-[10px] font-bold uppercase text-blue-600">Computer Vision / AI</span>
+                    </div>
 
-            <div class="row" style="margin-top: 40px;">
-                <div class="col">
-                    <h3 class="subheader"> Formação Acadêmica</h3>
-                    <ul style="color: var(--text-secondary); padding-left: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>Graduado em Análise e Desenvolvimento de Sistemas</strong></li>
-                        <li style="margin-bottom: 10px;"><strong>MBA em Análise de Dados com BI e Big Data</strong></li>
-                        <li style="margin-bottom: 10px;"><strong>Pós-graduação em Ethical Hacking e Cibersegurança</strong></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h3 class="subheader"> Certificações</h3>
-                    <ul style="color: var(--text-secondary); padding-left: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>Microsoft 70-762</strong> - Desenvolvimento de Banco de Dados SQL</li>
-                        <li style="margin-bottom: 10px;"><strong>Microsoft 70-461</strong> - Consultas no Microsoft SQL Server</li>
-                    </ul>
-                </div>
-            </div>
+                    <div class="group project-card">
+                        <div class="relative h-52 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                            <img src="https://i.imghippo.com/files/kzNQ1558M.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Azure Manager">
+                            <a href="https://github.com/joaovilar/app_streamlit_upload_file_azure" target="_blank" class="absolute inset-0 bg-blue-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Ver App</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Gerenciador de Arquivos Azure Data Lake</h4>
+                        <span class="text-[10px] font-bold uppercase text-blue-600">Streamlit / Cloud Storage</span>
+                    </div>
 
-            <h3 class="subheader"> Idiomas</h3>
-            <ul style="color: var(--text-secondary); padding-left: 20px;">
-                <li style="margin-bottom: 10px;">Português (Nativo)</li>
-                <li style="margin-bottom: 10px;">Inglês (Intermediário - B1)</li>
-                <li style="margin-bottom: 10px;">Espanhol (Básico)</li>
-            </ul>
+                    <div class="group project-card">
+                        <div class="relative h-52 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                            <img src="https://i.postimg.cc/8CNSdkxV/api.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="FastAPI">
+                            <a href="https://github.com/joaovilar/API-FastAPI" target="_blank" class="absolute inset-0 bg-blue-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Ver API Docs</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Backend API com FastAPI & MySQL</h4>
+                        <span class="text-[10px] font-bold uppercase text-blue-600">FastAPI / Backend</span>
+                    </div>
 
-            <hr>
+                    <div class="group project-card">
+                        <div class="relative h-52 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                            <img src="https://i.imghippo.com/files/Ze9815I.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="IA Gemini">
+                            <a href="https://github.com/joaovilar/api-privada_login" target="_blank" class="absolute inset-0 bg-blue-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Ver Chat IA</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">API Privada & Chat com IA Gemini</h4>
+                        <span class="text-[10px] font-bold uppercase text-blue-600">LLM / Generative AI</span>
+                    </div>
 
-            <div class="section-card powerbi-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
-                <div>
-                    <h3>Dashboards Power BI</h3>
-                    <h6>Clique na imagem para ver o dashboard ao vivo</h6>
-                </div>
-            </div>
-            <div class="project-grid">
-                <div class="project-item">
-                    <a href="https://app.powerbi.com/view?r=eyJrIjoiOWQxODI5NzEtODNiZi00MTI1LTlkZTktZDFmMWU0NDk2MzVlIiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank">
-                        <img src="https://i.imghippo.com/files/kkA2467Hp.jpg" alt="Dashboard de Entregas">
-                    </a>
-                    <div class="project-desc">Dashboard de Operações do Centro de Distribuição</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://i.postimg.cc/sfnmbzgQ/imagem.jpg" target="_blank">
-                        <img src="https://i.postimg.cc/sfnmbzgQ/imagem.jpg" alt="Dashboard de Contas">
-                    </a>
-                    <div class="project-desc">Dashboard de Projetos de Lei, Normas e Regulamentos</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://app.powerbi.com/view?r=eyJrIjoiOTdlYzY3ZjMtMzU2Mi00YzViLWFhODYtNmM0OGVhMjNlZDk1IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank">
-                        <img src="https://i.imghippo.com/files/hmaQ5302PSg.jpg" alt="People Analytics">
-                    </a>
-                    <div class="project-desc">Dashboard de Operações de People Analytics</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://app.powerbi.com/view?r=eyJrIjoiNjgyZDZkNWUtNDhmNy00ODNmLWFmYTgtZDBjMzBiMDEwMDk5IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank">
-                        <img src="https://i.postimg.cc/C1L90NTw/pw4.jpg" alt="Relatório de Vendas">
-                    </a>
-                    <div class="project-desc">Relatório Geral de Vendas</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://i.postimg.cc/L8n6cTCS/imagem-1.jpg" target="_blank">
-                        <img src="https://i.postimg.cc/L8n6cTCS/imagem-1.jpg" alt="Comissões">
-                    </a>
-                    <div class="project-desc">Painel de Monitoramento de Comissões</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://app.powerbi.com/view?r=eyJrIjoiN2E2NWJmOGItNGMxNS00NzhhLTgzNTItZGJiNWY0MTFkZWZhIiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank">
-                        <img src="https://i.imghippo.com/files/gIL1941mjY.jpg" alt="Vendas de Viagem">
-                    </a>
-                    <div class="project-desc">Dashboard de Vendas de Viagens</div>
                 </div>
             </div>
 
-            <div class="section-card databricks-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Databricks_Logo.png/640px-Databricks_Logo.png" alt="Databricks">
-                <div>
-                    <h3>Scripts Databricks (Notebooks)</h3>
-                    <h6>Clique na imagem para ir ao GitHub</h6>
+            <!-- Categoria: Engenharia de Dados -->
+           <div class="mb-20">
+                <div class="flex items-center mb-10">
+                    <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center text-white text-2xl mr-4 shadow-lg shadow-red-100">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Engenharia & Big Data (Databricks)</h3>
+                        <p class="text-slate-400 text-sm">Scripts de Automação e Pipelines ETL (Clique para ver no GitHub)</p>
+                    </div>
                 </div>
-            </div>
-            <div class="project-grid">
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/azuresql-to-datalake-medallion-dbdelta" target="_blank">
-                        <img src="https://i.postimg.cc/fWdh58K9/dbt1.jpg" alt="Arquitetura Lakehouse">
-                    </a>
-                    <div class="project-desc">Arquitetura Lakehouse: Azure SQL para Databricks</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/create_deltatable_databricks" target="_blank">
-                        <img src="https://i.postimg.cc/3xm7Rnyh/dtb2.jpg" alt="Tabela Delta">
-                    </a>
-                    <div class="project-desc">Criando tabelas Delta a partir do Data Lake</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/migration_mysql_to_databricks" target="_blank">
-                        <img src="https://i.postimg.cc/pd5jpNfT/img-dtb.jpg" alt="Migração">
-                    </a>
-                    <div class="project-desc">Migrando MySQL para Databricks Delta</div>
-                </div>
-                 <div class="project-item">
-                    <a href="https://github.com/joaovilar/Data-from-AWS-S3-in-Azure-Databricks/blob/main/Getting%20Data%20from%20Bucket%20S3.ipynb" target="_blank">
-                        <img src="https://i.postimg.cc/hvk6RR1d/ss3-dtb.jpg" alt="S3 para Databricks">
-                    </a>
-                    <div class="project-desc">Obtendo dados do Amazon S3 no Azure Databricks</div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="group project-card">
+                        <div class="relative h-48 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                            <img src="https://i.postimg.cc/fWdh58K9/dbt1.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Arquitetura Lakehouse">
+                            <a href="https://github.com/joaovilar/azuresql-to-datalake-medallion-dbdelta" target="_blank" class="absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Acessar Repositório</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight text-sm">Arquitetura Lakehouse: Azure SQL para Databricks</h4>
+                        <span class="text-[10px] font-bold uppercase text-red-600">Medallion Architecture</span>
+                    </div>
+
+                    <div class="group project-card">
+                        <div class="relative h-48 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                            <img src="https://i.postimg.cc/3xm7Rnyh/dtb2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Tabela Delta">
+                            <a href="https://github.com/joaovilar/create_deltatable_databricks" target="_blank" class="absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Ver Notebook</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight text-sm">Criando Tabelas Delta a partir do Data Lake</h4>
+                        <span class="text-[10px] font-bold uppercase text-red-600">Databricks Delta</span>
+                    </div>
+
+                    <div class="group project-card">
+                        <div class="relative h-48 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                            <img src="https://i.postimg.cc/pd5jpNfT/img-dtb.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Migração">
+                            <a href="https://github.com/joaovilar/migration_mysql_to_databricks" target="_blank" class="absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Ver Migração</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight text-sm">Migração Estruturada: MySQL para Databricks</h4>
+                        <span class="text-[10px] font-bold uppercase text-red-600">ETL / Migration</span>
+                    </div>
+
+                    <div class="group project-card">
+                        <div class="relative h-48 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                            <img src="https://i.postimg.cc/hvk6RR1d/ss3-dtb.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="S3 para Databricks">
+                            <a href="https://github.com/joaovilar/Data-from-AWS-S3-in-Azure-Databricks/blob/main/Getting%20Data%20from%20Bucket%20S3.ipynb" target="_blank" class="absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Ver Integração</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight text-sm">Integração Multi-Cloud: AWS S3 no Databricks</h4>
+                        <span class="text-[10px] font-bold uppercase text-red-600">Cloud Data Flow</span>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="section-card airflow-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/AirflowLogo.png/220px-AirflowLogo.png" alt="Airflow">
-                <div>
-                    <h3>Pipelines de Dados no Apache Airflow</h3>
-                    <h6>Clique na imagem para ir ao GitHub</h6>
+          <div class="mb-20">
+                <div class="flex items-center mb-10">
+                    <div class="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center text-white text-2xl mr-4 shadow-lg shadow-yellow-100">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Visualização & Dashboards</h3>
+                        <p class="text-slate-400 text-sm">Insights interativos com Power BI (Clique para acessar)</p>
+                    </div>
                 </div>
-            </div>
-            <div class="project-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 380px)); justify-content: start;">
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/Python/tree/main/Airflow" target="_blank">
-                        <img src="https://i.imghippo.com/files/MaA9943SI.jpg" alt="Airflow DAG">
-                    </a>
-                    <div class="project-desc">Exemplo de DAG no Airflow para extração e transformação</div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="group project-card">
+                        <div class="relative h-56 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm">
+                            <img src="https://i.imghippo.com/files/kkA2467Hp.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Dashboard de Entregas">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiOWQxODI5NzEtODNiZi00MTI1LTlkZTktZDFmMWU0NDk2MzVlIiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank" class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-white font-bold px-4 py-2 border border-white rounded-lg text-sm">Ver Dashboard ao Vivo</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Operações do Centro de Distribuição</h4>
+                        <p class="text-slate-500 text-xs mt-1">Logística e Gestão de Entregas</p>
+                    </div>
+
+                    <div class="group project-card">
+                        <div class="relative h-56 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm">
+                            <img src="https://i.postimg.cc/sfnmbzgQ/imagem.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Dashboard de Contas">
+                            <a href="https://i.postimg.cc/sfnmbzgQ/imagem.jpg" target="_blank" class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-white font-bold px-4 py-2 border border-white rounded-lg text-sm">Ver Preview</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Projetos de Lei, Normas e Regulamentos</h4>
+                        <p class="text-slate-500 text-xs mt-1">Gestão Governamental e Legal</p>
+                    </div>
+
+                    <div class="group project-card">
+                        <div class="relative h-56 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm">
+                            <img src="https://i.imghippo.com/files/hmaQ5302PSg.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="People Analytics">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiOTdlYzY3ZjMtMzU2Mi00YzViLWFhODYtNmM0OGVhMjNlZDk1IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank" class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-white font-bold px-4 py-2 border border-white rounded-lg text-sm">Ver Dashboard ao Vivo</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Operações de People Analytics</h4>
+                        <p class="text-slate-500 text-xs mt-1">RH Estratégico e Indicadores de Pessoal</p>
+                    </div>
+
+                    <div class="group project-card">
+                        <div class="relative h-56 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm">
+                            <img src="https://i.postimg.cc/C1L90NTw/pw4.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Relatório de Vendas">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiNjgyZDZkNWUtNDhmNy00ODNmLWFmYTgtZDBjMzBiMDEwMDk5IiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank" class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-white font-bold px-4 py-2 border border-white rounded-lg text-sm">Ver Dashboard ao Vivo</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Relatório Geral de Vendas</h4>
+                        <p class="text-slate-500 text-xs mt-1">Performance Comercial e Faturamento</p>
+                    </div>
+
+                    <div class="group project-card">
+                        <div class="relative h-56 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm">
+                            <img src="https://i.postimg.cc/L8n6cTCS/imagem-1.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Comissões">
+                            <a href="https://i.postimg.cc/L8n6cTCS/imagem-1.jpg" target="_blank" class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-white font-bold px-4 py-2 border border-white rounded-lg text-sm">Ver Preview</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Monitoramento de Comissões</h4>
+                        <p class="text-slate-500 text-xs mt-1">Gestão Financeira de Vendas</p>
+                    </div>
+
+                    <div class="group project-card">
+                        <div class="relative h-56 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm">
+                            <img src="https://i.imghippo.com/files/gIL1941mjY.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Vendas de Viagem">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiN2E2NWJmOGItNGMxNS00NzhhLTgzNTItZGJiNWY0MTFkZWZhIiwidCI6IjU1NjBlNDIwLTVmNzEtNDAwYy04YmJlLWU1MmZhZTcyZWI2YyJ9" target="_blank" class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-white font-bold px-4 py-2 border border-white rounded-lg text-sm">Ver Dashboard ao Vivo</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight">Vendas de Viagens</h4>
+                        <p class="text-slate-500 text-xs mt-1">Turismo e Marketplace de Passagens</p>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="section-card python-card">
-                <img src="https://i.postimg.cc/vDwZqdB3/googlecolab-jupyter.png" alt="Python">
-                <div>
-                    <h3>Manipulação de Dados com Python</h3>
-                    <h6>Scripts no VS Code, Jupyter Notebook, Google Colab</h6>
-                </div>
-            </div>
-            <div class="project-grid">
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/Python/blob/main/Python_Jupyter/DataManipulation%20(SQL_Python).ipynb" target="_blank">
-                        <img src="https://i.postimg.cc/HLKLFMvS/manupulation.jpg" alt="Manipulação de Dados">
-                    </a>
-                    <div class="project-desc">Manipulação de dados no Jupyter Notebook</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/Python/blob/main/Google_Colab/MatplotLib_vs_Seaborn.ipynb" target="_blank">
-                        <img src="https://i.postimg.cc/KjQjqH6T/matplot-searborn.jpg" alt="Matplotlib Seaborn">
-                    </a>
-                    <div class="project-desc">Gráficos com Matplotlib e Seaborn</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/Python/blob/main/Google_Colab/Use_Spark.ipynb" target="_blank">
-                        <img src="https://i.postimg.cc/Z5s7tY87/spark-google-colab.jpg" alt="Spark Colab">
-                    </a>
-                    <div class="project-desc">Executando scripts com Spark no Google Colab</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/Python/blob/main/Python_Jupyter/files_azure_to_database.ipynb" target="_blank">
-                        <img src="https://i.postimg.cc/3wsCZkhG/azure-sql.jpg" alt="Azure SQL">
-                    </a>
-                    <div class="project-desc">Azure Data Lake para Azure SQL</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/Python/blob/main/Python_Jupyter/Envia%20Consolidado%20Azure.ipynb" target="_blank">
-                        <img src="https://i.postimg.cc/XqHbRSQw/consolidando.jpg" alt="Consolidado">
-                    </a>
-                    <div class="project-desc">Dataframe consolidado para Azure SQL</div>
-                </div>
-                 <div class="project-item">
-                    <a href="https://github.com/joaovilar/Python/blob/main/webscrap.ipynb" target="_blank">
-                        <img src="https://i.postimg.cc/ZY3qtGs6/webscraping.jpg" alt="Web Scraping">
-                    </a>
-                    <div class="project-desc">Web scraping em Python usando requests</div>
-                </div>
-
-                  <div class="project-item">
-                    <a href="https://github.com/joaovilar/bioinformatics-fasta-reader" target="_blank">
-                        <img src="https://i.postimg.cc/zfrWxsHb/biovilar-(2).png" alt="Bioinformática">
-                    </a>
-                    <div class="project-desc">Bioinformática para armazenamento de sequências biológicas (DNA, RNA ou proteínas).</div>
-                </div>
-            </div>
+<!-- Seção Carreira (Timeline Unificada) -->
+    <section id="experiencia" class="py-24 bg-slate-50 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center">Trajetória Profissional</h2>
             
-             <div class="section-card streamlit-card">
-                <img src="https://i.postimg.cc/FHR8RHZZ/logo-python-html.jpg" alt="dev web">
-                <div>
-                    <h3>Desenvolvimento Python (Streamlit, Flask, FastAPI</h3>
-                    <h6>Web Apps e Dashboards</h6>
-                </div>
-            </div>
-            <div class="project-grid">
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/login_painel" target="_blank">
-                        <img src="https://i.postimg.cc/L4Yck5Ky/tela-login.jpg" alt="Tela Login">
-                    </a>
-                    <div class="project-desc">Tela de autenticação com MySQL e acesso a Dashboard</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/face_detection" target="_blank">
-                        <img src="https://i.postimg.cc/6qByqzyB/facerego.jpg" alt="Detecção Facial">
-                    </a>
-                    <div class="project-desc">Sistema de detecção facial (OpenCV)</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/app_streamlit_upload_file_azure" target="_blank">
-                        <img src="https://i.imghippo.com/files/kzNQ1558M.png" alt="Gerenciador de Arquivos">
-                    </a>
-                    <div class="project-desc">Gerenciador de arquivos para Azure Data Lake</div>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/joaovilar/API-FastAPI" target="_blank">
-                        <img src="https://i.postimg.cc/8CNSdkxV/api.jpg" alt="FastAPI">
-                    </a>
-                    <div class="project-desc">API com FastAPI e banco de dados MySQL</div>
-                </div>
-                 <div class="project-item">
-                    <a href="https://github.com/joaovilar/api-privada_login" target="_blank">
-                        <img src="https://i.imghippo.com/files/Ze9815I.png" alt="FastAPI">
-                    </a>
-                    <div class="project-desc">API Privada e Chat Com IA Gemini integrada</div>
-                </div>
-            </div>
+            <div class="relative experience-timeline pl-10 space-y-12">
+                
+                <!-- Stefanini -->
+                <div class="relative">
+                    <div class="absolute -left-[45px] top-1 w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow-md flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <span class="text-blue-600 font-bold text-sm">Set 2022 - Presente · 3 anos e 7 meses </span>
+                        <h3 class="text-2xl font-extrabold mt-1">Analista de BI Sênior</h3>
+                        <p class="text-slate-500 font-semibold mb-4">Stefanini Group (Banco do Brasil Seguros)</p>
+                        <p class="text-slate-600 leading-relaxed">
+                            Monitoramento de inadimplência e automação de dados estratégicos. Desenvolvimento de consultas complexas em MySQL, PostgreSQL, Oracle e DB2. Criação de dashboards dinâmicos no Power BI com DAX/M e arquitetura de pipelines ETL em Python.
 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- G4F -->
+                <div class="relative">
+                    <div class="absolute -left-[45px] top-1 w-8 h-8 bg-slate-400 rounded-full border-4 border-white shadow-md flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <span class="text-slate-500 font-bold text-sm">Dez 2019 - Set 2022· 2 anos e 6 meses </span>
+                        <h3 class="text-2xl font-extrabold mt-1">Analista de BI</h3>
+                        <p class="text-slate-500 font-semibold mb-4">G4F Soluções (Ministério da Economia)</p>
+                        <ul class="text-slate-600 space-y-2 list-disc pl-5">
+                            <li>Processos ETL robustos com SQL Server Integration Services (SSIS).</li>
+                            <li>Modelagem de dados relacional e dimensional (Star Schema).</li>
+                            <li>Gerenciamento de ambiente On-premise de servidores Qlik Sense (QMC).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                  <!-- IOS -->
+                <div class="relative">
+                    <div class="absolute -left-[45px] top-1 w-8 h-8 bg-slate-400 rounded-full border-4 border-white shadow-md flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <span class="text-slate-500 font-bold text-sm">Dez 2017 - 2019 · 1 ano e 6 meses </span>
+                        <h3 class="text-2xl font-extrabold mt-1">Analista de Business Intelligence Pleno</h3>
+                        <p class="text-slate-500 font-semibold mb-4">IOS Informática</p>
+                        <ul class="text-slate-600 space-y-2 list-disc pl-5">
+                            <li>Criei dashboards interativos e relatórios informativos no Power BI, fornecendo insights essenciais para decisões estratégicas.</li>
+                            <li>Escrevi scripts T-SQL em bancos de dados SQL Server e MySQL, agilizando a recuperação de dados.</li>
+                            <li>Contribuí para o suporte e ajustes de cubos OLAP e pacotes ETL, garantindo integridade e eficiência no fluxo de dados.</li>
+                            <li> Lidei com solicitações de manutenção e desenvolvimento em projetos de BI, documentando soluções de forma abrangente.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Compline -->
+                <div class="relative">
+                    <div class="absolute -left-[45px] top-1 w-8 h-8 bg-slate-400 rounded-full border-4 border-white shadow-md flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <span class="text-slate-500 font-bold text-sm">2017 - 2019· 2 anos e 6 meses </span>
+                        <h3 class="text-2xl font-extrabold mt-1">Administrador de Banco de Dados</h3>
+                        <p class="text-slate-500 font-semibold mb-4">Compline</p>
+                        <p class="text-slate-600">Administração de ambientes SQL Server, criação de cubos OLAP e desenvolvimento de relatórios móveis integrados ao Reporting Services.</p>
+                    </div>
+                </div>
+            </div>
+      <section id="contato" class="py-20 px-6"></section>
+
+    <!-- Call to Action -->
+    <section id="contato" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto bg-blue-600 rounded-[40px] p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-200">
+            <div class="relative z-10">
+                <span class="bg-blue-500 text-blue-100 px-4 py-1 rounded-full text-sm font-bold mb-6 inline-block">Disponível para novos desafios</span>
+                <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">Vamos construir algo <br> incrível juntos?</h2>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                    <a href="mailto:j.vilar12@gmail.com" class="w-full md:w-auto bg-white text-blue-600 px-10 py-5 rounded-2xl font-black hover:bg-slate-50 transition shadow-lg flex items-center justify-center">
+                        <i class="fa-solid fa-envelope mr-3"></i> j.vilar12@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/joao-vilar-braga/" target="_blank" class="w-full md:w-auto bg-slate-900 text-white px-10 py-5 rounded-2xl font-black hover:bg-slate-800 transition flex items-center justify-center">
+                        <i class="fa-brands fa-linkedin-in mr-3"></i> LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-blue-500 rounded-full opacity-30"></div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-blue-700 rounded-full opacity-30"></div>
         </div>
+    </section>
 
-        <div id="experience" class="page">
-            <h1 style="margin-top: 0; color: var(--text-primary); font-weight: 800; font-size: 2.5rem;">📜 Experiência Profissional</h1>
-            <hr style='border-top: 1px solid var(--color-accent); margin: 20px 0 40px 0;'/>
-
-            <div class="experience-box">
-                <h3>Analista de Business Intelligence Sênior</h3>
-                <p><strong>Stefanini Group · Tempo Integral</strong></p>
-                <p><em>Setembro 2022 - Presente · 3 anos e 7 meses (Remoto)</em></p>
-                <hr>
-                <p>Contribuí significativamente para o monitoramento de inadimplência no <strong>Banco do Brasil Seguros</strong>, proporcionando maior visibilidade sobre <strong>milhares de reais</strong> e automatizando a estruturação de dados com base em estratégias internas.</p>
-                <p>Atendo demandas de diversos departamentos, oferecendo suporte no acompanhamento de processos e desenvolvendo <strong>consultas e scripts SQL</strong> em <strong>MySQL, PostgreSQL, Oracle e DB2</strong>, utilizando <strong>DBeaver</strong>.</p>
-                <p>Crio <strong>dashboards e relatórios dinâmicos no Power BI com linguagem M e DAX</strong> (Desktop, Services, e Report Server), proporcionando respostas claras para questões estratégicas do negócio e sugestões que possam ajudar na análise do cliente e criação de painéis utilizando Figma para uma experiência visual aprimorada, e também desenvolvo <strong>Jobs ETL em Python</strong>.</p>
-                <p>Participo ativamente das interações diárias com a equipe, garantindo <strong>alinhamento</strong> e <strong>entrega de resultados</strong> de acordo com as expectativas do produto.</p>
+    <!-- Rodapé -->
+    <footer class="py-16 border-t border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-2xl font-black text-slate-900 mb-8">JOÃOVILAR<span class="text-blue-600">.DATA</span></div>
+            <div class="flex justify-center space-x-8 text-slate-400 mb-8">
+                <a href="https://www.linkedin.com/in/joao-vilar-braga/" class="hover:text-blue-600 text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/joaovilar" class="hover:text-slate-900 text-2xl transition"><i class="fa-brands fa-github"></i></a>
             </div>
-
-            <div class="experience-box">
-                <h3>Analista de Business Intelligence</h3>
-                <p><strong>G4F Soluções Corporativas</strong></p>
-                <p><em>Dezembro 2019 - Setembro 2022 (2 anos e 6 meses)</em></p>
-                <hr>
-                <p>Contribuí significativamente para o Ministério da Economia em diversas áreas:</p>
-                <ul>
-                    <li><strong>Business Intelligence (BI):</strong> Desenvolvimento de relatórios interativos e intuitivos no Power BI, oferecendo insights estratégicos.</li>
-                    <li><strong>Processos ETL com SSIS:</strong> Construção de fluxos ETL eficientes usando SQL Server Integration Services (SSIS).</li>
-                    <li>Trabalhei no desenvolvimento de <strong>modelagem de dados</strong> relacional e dimensional (Star Schema), além de migração de dados.</li>
-                    <li><strong>Consultas e Scripts SQL:</strong> Consultas avançadas em SQL Server, PostgreSQL e MySQL, garantindo extração precisa de dados.</li>
-                    <li><strong>Ambiente Qlik Sense:</strong> Apoio ao ambiente On-premisse de servidores Qlik Sense de forma que atenda a necessidade das áreas/coordenações, na qual incluem atividades de gerenciamento dos servidores Qlik (ambiente QMC); Desenvolvimento e correção de visuais gráficos no Qlik Sense;</li>
-                </ul>
-            </div>
-
-            <div class="experience-box">
-                <h3>Analista de Sistemas BI</h3>
-                <p><strong>Indra | Minsait</strong></p>
-                <p><em>Novembro 2021 - Abril 2022</em></p>
-                <hr>
-                <p>Trabalhei em projetos de BI focados em:</p>
-                <ul>
-                    <li><strong>Scripts T-SQL e SSIS:</strong> Desenvolvimento de scripts eficientes em SQL Server e processos ETL.</li>
-                    <li><strong>Relatórios com Power BI:</strong> Criação de relatórios interativos para tomada de decisão estratégica.</li>
-                    <li><strong>Metodologia Scrum:</strong> Participação em entregas ágeis e colaborativas.</li>
-                    <li><strong>Documentação Detalhada:</strong> Criação de documentação para referência e uso futuro.</li>
-                </ul>
-            </div>
-
-            <div class="experience-box">
-                <h3>Analista de Business Intelligence Pleno</h3>
-                <p><strong>IOS Informática</strong></p>
-                <p><em>(1 ano e 6 meses)</em></p>
-                <hr>
-                <p>Desempenhei um papel crucial no atendimento às demandas de Business Intelligence para o Ministério da Economia. Minhas conquistas incluíram:</p>
-                <ul>
-                    <li><strong>Desenvolvimento de Dashboards e Relatórios com Power BI:</strong> Criei dashboards interativos e relatórios informativos no Power BI, fornecendo insights essenciais para decisões estratégicas.</li>
-                    <li><strong>Scripting T-SQL e Consultas de Banco de Dados:</strong> Escrevi scripts T-SQL em bancos de dados SQL Server e MySQL, agilizando a recuperação de dados.</li>
-                    <li><strong>Suporte e Ajustes para Cubos OLAP e Pacotes ETL:</strong> Contribuí para o suporte e ajustes de cubos OLAP e pacotes ETL, garantindo integridade e eficiência no fluxo de dados.</li>
-                    <li><strong>Gestão de Demandas e Documentação de Projetos:</strong> Lidei com solicitações de manutenção e desenvolvimento em projetos de BI, documentando soluções de forma abrangente.</li>
-                </ul>
-            </div>
-
-            <div class="experience-box">
-                <h3>Administrador de Banco de Dados</h3>
-                <p><strong>Compline</strong></p>
-                <p><em>(2 Anos e 6 meses)</em></p>
-                <hr>
-                <p>Criei projetos de Business Intelligence com SQL Server e Integration Services e desenvolvi Dashboards usando Datazen. Desenvolvi Relatórios e Dashboards com Mobile Report integrado ao Reporting Services 2016.</p>
-                <strong>Principais Atividades:</strong>
-                <ul>
-                    <li>Planejamento e implementação de dashboards e relatórios analíticos;</li>
-                    <li>Instalação e configuração de ambientes OLAP (Microsoft Datazen e Reporting Services 2016);</li>
-                    <li>Desenvolvimento e publicação de KPIs e Dashboards;</li>
-                    <li>Parametrização de Dashboard para análise Drill Through e segurança (Row Level Security);</li>
-                    <li>Pacotes ETL com Integration Services;</li>
-                    <li>Importação de planilhas Excel via FTP para SQL Server;</li>
-                    <li>Migração de banco de dados, levantamento de pré-requisitos e realização das transformações necessárias;</li>
-                    <li>Desenvolvimento e manutenção de dados usando bancos de dados em nuvem - Azure SQL Database;</li>
-                    <li>Consultas, manipulação de dados, controle de acesso de usuários;</li>
-                    <li>Backup e Restore de Bancos de Dados, configuração de rotinas, criação de Jobs;</li>
-                </ul>
-            </div>
-
+            <p class="text-sm text-slate-400 font-medium">© 2024 João Vilar Braga. Projetando o futuro com dados e precisão.</p>
         </div>
-
-    </main>
+    </footer>
 
     <script>
-        function showPage(pageId) {
-            // Adicionar classe de saída antes de mudar
-            const activePage = document.querySelector('.page.active');
-            activePage.style.opacity = 0;
+        // Reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
 
-            setTimeout(() => {
-                // Esconder todas as páginas
-                document.querySelectorAll('.page').forEach(page => {
-                    page.classList.remove('active');
-                    page.style.opacity = 0; // Resetar opacidade
-                });
-
-                // Remover classe active de todos os botões
-                document.querySelectorAll('.nav-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-
-                // Mostrar a página selecionada
-                const newPage = document.getElementById(pageId);
-                newPage.classList.add('active');
-                
-                // Forçar um reflow para a transição de entrada funcionar
-                void newPage.offsetWidth;
-                newPage.style.opacity = 1;
-
-                // Ativar o botão clicado
-                const btns = document.querySelectorAll('.nav-btn');
-                if (pageId === 'about') {
-                    btns[0].classList.add('active');
-                } else {
-                    btns[1].classList.add('active');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
+            });
+        }, observerOptions);
 
-                // Scroll para o topo
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 300); // Tempo da transição de saída
-        }
-
-        // Inicialização: mostrar a página 'about' com opacidade total
-        document.addEventListener('DOMContentLoaded', (event) => {
-             const activePage = document.querySelector('.page.active');
-             if (activePage) {
-                 activePage.style.opacity = 1;
-             }
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('section-fade');
+            observer.observe(section);
         });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+            });
+        }
+    });
+});
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
