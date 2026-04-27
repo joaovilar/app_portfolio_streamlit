@@ -53,6 +53,7 @@
                 <a href="#formacao" class="hover:text-blue-600 transition">Formação</a>
                 <a href="#portfolio" class="hover:text-blue-600 transition">Projetos</a>
                 <a href="#experiencia" class="hover:text-blue-600 transition">Trajetória</a>
+                
                 <a href="mailto:j.vilar12@gmail.com" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition shadow-md shadow-blue-200">Contato</a>
             </div>
             <div class="md:hidden">
@@ -102,8 +103,8 @@
                         <span class="w-12 h-1 bg-blue-600 mr-4 rounded-full"></span> Sobre Mim
                     </h2>
                     <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
-                        <p>Sou um entusiasta por tecnologia com mais de <strong>9 anos</strong> de bagagem na área de dados. Especializo-me na arquitetura de pipelines robustos, cobrindo todo o ciclo de vida: ETL e análise avançada.</p>
-                        <p>Atualmente, foco minha expertise no ecossistema <strong>Microsoft Azure e Databricks</strong>, garantindo que grandes volumes de informação se tornem ativos de negócio.</p>
+                        <p>Nascido no Maranhão, construí minha trajetória em Brasília. Sou um entusiasta por tecnologia com mais de <strong>10 anos</strong> de bagagem na área de dados. Especializo-me na arquitetura de pipelines, cobrindo todo o ciclo de vida: ETL e análise avançada.</p>
+                        <p>Atualmente, foco minha expertise no ecossistema <strong>Microsoft Azure, Databricks e Python</strong>, garantindo que grandes volumes de informação se tornem ativos de negócio.</p>
                         <p class="p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-xl italic">
                             Diferencial: Estou expandindo fronteiras para Desenvolvimento Web e Bioinformática, integrando Python com frameworks modernos como Streamlit, FastAPI e Flask.
                         </p>
@@ -173,8 +174,8 @@
                         </div>
                         <div class="relative">
                             <div class="absolute -left-[41px] top-0 w-5 h-5 bg-slate-300 rounded-full border-4 border-white shadow-sm"></div>
-                            <h4 class="text-xl font-bold">Graduação ADS</h4>
-                            <p class="text-blue-600 font-semibold mb-2 text-sm">Análise e Desenvolvimento de Sistemas</p>
+                            <h4 class="text-xl font-bold">Graduação em Análise e Desenvolvimento de Sistemas</h4>
+                            <p class="text-blue-600 font-semibold mb-2 text-sm">UniProjeção-DF</p>
                         </div>
                     </div>
                 </div>
@@ -319,22 +320,48 @@
                 </div>
             </div>
 
-            <!-- Categoria: Engenharia de Dados -->
-           <div class="mb-20">
+            <section class="max-w-7xl mx-auto">
+                <!-- Cabeçalho da Categoria -->
                 <div class="flex items-center mb-10">
-                    <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center text-white text-2xl mr-4 shadow-lg shadow-red-100">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mr-4 shadow-lg shadow-blue-100">
                         <i class="fa-solid fa-gears"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold">Engenharia & Big Data (Databricks)</h3>
-                        <p class="text-slate-400 text-sm">Scripts de Automação e Pipelines ETL (Clique para ver no GitHub)</p>
+                        <h3 class="text-2xl font-bold text-slate-800">Engenharia de Dados & Cloud</h3>
+                        <p class="text-slate-400 text-sm">Pipelines ETL, Automação e Arquitetura Azure/Databricks</p>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Grid de Projetos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                     
+                    <!-- 1. Azure to Database (Destaque/Grande) -->
                     <div class="group project-card">
-                        <div class="relative h-48 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                        <div class="relative h-52 bg-slate-900 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200 flex items-center justify-center">
+                            <div class="text-center p-6">
+                                <i class="fa-solid fa-cloud-arrow-down text-5xl text-blue-400 mb-4"></i>
+                                <div class="flex justify-center space-x-2 text-white/50 text-[10px] uppercase font-bold">
+                                    <span>Azure Blob</span>
+                                    <span><i class="fa-solid fa-arrow-right"></i></span>
+                                    <span>SQL Database</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/joaovilar/Python/blob/main/Python_Jupyter/files_azure_to_database.ipynb" target="_blank" class="absolute inset-0 bg-blue-600/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
+                                <span class="text-white font-bold text-xs">Ver Notebook</span>
+                            </a>
+                        </div>
+                        <h4 class="font-bold text-slate-800 leading-tight text-sm">Pipeline: Azure Storage para Azure SQL via Python</h4>
+                        <p class="text-slate-500 text-[11px] mt-2 leading-relaxed line-clamp-2">Extração automatizada de blobs e ingestão SQL usando Pandas e SQLAlchemy.</p>
+                        <div class="mt-3 flex flex-wrap gap-1">
+                            <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600 font-bold uppercase">Python</span>
+                            <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600 font-bold uppercase">Azure</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Lakehouse Medallion -->
+                    <div class="group project-card">
+                        <div class="relative h-52 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
                             <img src="https://i.postimg.cc/fWdh58K9/dbt1.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Arquitetura Lakehouse">
                             <a href="https://github.com/joaovilar/azuresql-to-datalake-medallion-dbdelta" target="_blank" class="absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
@@ -342,11 +369,12 @@
                             </a>
                         </div>
                         <h4 class="font-bold text-slate-800 leading-tight text-sm">Arquitetura Lakehouse: Azure SQL para Databricks</h4>
-                        <span class="text-[10px] font-bold uppercase text-red-600">Medallion Architecture</span>
+                        <span class="text-[10px] font-bold uppercase text-red-600 block mt-1">Medallion Architecture</span>
                     </div>
 
+                    <!-- 3. Tabelas Delta -->
                     <div class="group project-card">
-                        <div class="relative h-48 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                        <div class="relative h-52 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
                             <img src="https://i.postimg.cc/3xm7Rnyh/dtb2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Tabela Delta">
                             <a href="https://github.com/joaovilar/create_deltatable_databricks" target="_blank" class="absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
@@ -354,11 +382,12 @@
                             </a>
                         </div>
                         <h4 class="font-bold text-slate-800 leading-tight text-sm">Criando Tabelas Delta a partir do Data Lake</h4>
-                        <span class="text-[10px] font-bold uppercase text-red-600">Databricks Delta</span>
+                        <span class="text-[10px] font-bold uppercase text-red-600 block mt-1">Databricks Delta</span>
                     </div>
 
+                    <!-- 4. MySQL to Databricks -->
                     <div class="group project-card">
-                        <div class="relative h-48 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                        <div class="relative h-52 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
                             <img src="https://i.postimg.cc/pd5jpNfT/img-dtb.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Migração">
                             <a href="https://github.com/joaovilar/migration_mysql_to_databricks" target="_blank" class="absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
@@ -366,11 +395,12 @@
                             </a>
                         </div>
                         <h4 class="font-bold text-slate-800 leading-tight text-sm">Migração Estruturada: MySQL para Databricks</h4>
-                        <span class="text-[10px] font-bold uppercase text-red-600">ETL / Migration</span>
+                        <span class="text-[10px] font-bold uppercase text-red-600 block mt-1">ETL / Migration</span>
                     </div>
 
+                    <!-- 5. AWS S3 no Databricks -->
                     <div class="group project-card">
-                        <div class="relative h-48 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
+                        <div class="relative h-52 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-200">
                             <img src="https://i.postimg.cc/hvk6RR1d/ss3-dtb.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="S3 para Databricks">
                             <a href="https://github.com/joaovilar/Data-from-AWS-S3-in-Azure-Databricks/blob/main/Getting%20Data%20from%20Bucket%20S3.ipynb" target="_blank" class="absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <i class="fa-brands fa-github text-white text-3xl mb-2"></i>
@@ -378,13 +408,13 @@
                             </a>
                         </div>
                         <h4 class="font-bold text-slate-800 leading-tight text-sm">Integração Multi-Cloud: AWS S3 no Databricks</h4>
-                        <span class="text-[10px] font-bold uppercase text-red-600">Cloud Data Flow</span>
+                        <span class="text-[10px] font-bold uppercase text-red-600 block mt-1">Cloud Data Flow</span>
                     </div>
 
                 </div>
-            </div>
+            </section>
 
-          <div class="mb-20">
+            <div class="mb-20 mt-16">
                 <div class="flex items-center mb-10">
                     <div class="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center text-white text-2xl mr-4 shadow-lg shadow-yellow-100">
                         <i class="fa-solid fa-chart-line"></i>
@@ -465,8 +495,10 @@
 
                 </div>
             </div>
+        </div>
+    </section>
 
-<!-- Seção Carreira (Timeline Unificada) -->
+    <!-- Seção Carreira (Timeline Unificada) -->
     <section id="experiencia" class="py-24 bg-slate-50 px-6">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-4xl font-bold mb-16 text-center">Trajetória Profissional</h2>
@@ -479,12 +511,11 @@
                         <i class="fa-solid fa-briefcase"></i>
                     </div>
                     <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
-                        <span class="text-blue-600 font-bold text-sm">Set 2022 - Presente · 3 anos e 7 meses </span>
+                        <span class="text-blue-600 font-bold text-sm">Set 2022 - Presente · 3 anos e 7 meses</span>
                         <h3 class="text-2xl font-extrabold mt-1">Analista de BI Sênior</h3>
                         <p class="text-slate-500 font-semibold mb-4">Stefanini Group (Banco do Brasil Seguros)</p>
                         <p class="text-slate-600 leading-relaxed">
                             Monitoramento de inadimplência e automação de dados estratégicos. Desenvolvimento de consultas complexas em MySQL, PostgreSQL, Oracle e DB2. Criação de dashboards dinâmicos no Power BI com DAX/M e arquitetura de pipelines ETL em Python.
-
                         </p>
                     </div>
                 </div>
@@ -495,7 +526,7 @@
                         <i class="fa-solid fa-briefcase"></i>
                     </div>
                     <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
-                        <span class="text-slate-500 font-bold text-sm">Dez 2019 - Set 2022· 2 anos e 6 meses </span>
+                        <span class="text-slate-500 font-bold text-sm">Dez 2019 - Set 2022 · 2 anos e 6 meses</span>
                         <h3 class="text-2xl font-extrabold mt-1">Analista de BI</h3>
                         <p class="text-slate-500 font-semibold mb-4">G4F Soluções (Ministério da Economia)</p>
                         <ul class="text-slate-600 space-y-2 list-disc pl-5">
@@ -506,20 +537,20 @@
                     </div>
                 </div>
 
-                  <!-- IOS -->
+                <!-- IOS -->
                 <div class="relative">
                     <div class="absolute -left-[45px] top-1 w-8 h-8 bg-slate-400 rounded-full border-4 border-white shadow-md flex items-center justify-center text-white text-xs">
                         <i class="fa-solid fa-briefcase"></i>
                     </div>
                     <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
-                        <span class="text-slate-500 font-bold text-sm">Dez 2017 - 2019 · 1 ano e 6 meses </span>
+                        <span class="text-slate-500 font-bold text-sm">Dez 2017 - 2019 · 1 ano e 6 meses</span>
                         <h3 class="text-2xl font-extrabold mt-1">Analista de Business Intelligence Pleno</h3>
                         <p class="text-slate-500 font-semibold mb-4">IOS Informática</p>
                         <ul class="text-slate-600 space-y-2 list-disc pl-5">
                             <li>Criei dashboards interativos e relatórios informativos no Power BI, fornecendo insights essenciais para decisões estratégicas.</li>
                             <li>Escrevi scripts T-SQL em bancos de dados SQL Server e MySQL, agilizando a recuperação de dados.</li>
                             <li>Contribuí para o suporte e ajustes de cubos OLAP e pacotes ETL, garantindo integridade e eficiência no fluxo de dados.</li>
-                            <li> Lidei com solicitações de manutenção e desenvolvimento em projetos de BI, documentando soluções de forma abrangente.</li>
+                            <li>Lidei com solicitações de manutenção e desenvolvimento em projetos de BI, documentando soluções de forma abrangente.</li>
                         </ul>
                     </div>
                 </div>
@@ -530,44 +561,31 @@
                         <i class="fa-solid fa-database"></i>
                     </div>
                     <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
-                        <span class="text-slate-500 font-bold text-sm">2017 - 2019· 2 anos e 6 meses </span>
+                        <span class="text-slate-500 font-bold text-sm">2017 - 2019 · 2 anos e 6 meses</span>
                         <h3 class="text-2xl font-extrabold mt-1">Administrador de Banco de Dados</h3>
                         <p class="text-slate-500 font-semibold mb-4">Compline</p>
                         <p class="text-slate-600">Administração de ambientes SQL Server, criação de cubos OLAP e desenvolvimento de relatórios móveis integrados ao Reporting Services.</p>
                     </div>
                 </div>
             </div>
-      <section id="contato" class="py-20 px-6"></section>
-
-    <!-- Call to Action -->
-    <section id="contato" class="py-20 px-6">
-        <div class="max-w-5xl mx-auto bg-blue-600 rounded-[40px] p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-200">
-            <div class="relative z-10">
-                <span class="bg-blue-500 text-blue-100 px-4 py-1 rounded-full text-sm font-bold mb-6 inline-block">Disponível para novos desafios</span>
-                <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">Vamos construir algo <br> incrível juntos?</h2>
-                <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-                    <a href="mailto:j.vilar12@gmail.com" class="w-full md:w-auto bg-white text-blue-600 px-10 py-5 rounded-2xl font-black hover:bg-slate-50 transition shadow-lg flex items-center justify-center">
-                        <i class="fa-solid fa-envelope mr-3"></i> j.vilar12@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/joao-vilar-braga/" target="_blank" class="w-full md:w-auto bg-slate-900 text-white px-10 py-5 rounded-2xl font-black hover:bg-slate-800 transition flex items-center justify-center">
-                        <i class="fa-brands fa-linkedin-in mr-3"></i> LinkedIn Profile
-                    </a>
-                </div>
-            </div>
-            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-blue-500 rounded-full opacity-30"></div>
-            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-blue-700 rounded-full opacity-30"></div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="py-16 border-t border-slate-100 bg-white">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="text-2xl font-black text-slate-900 mb-8">JOÃOVILAR<span class="text-blue-600">.DATA</span></div>
-            <div class="flex justify-center space-x-8 text-slate-400 mb-8">
-                <a href="https://www.linkedin.com/in/joao-vilar-braga/" class="hover:text-blue-600 text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/joaovilar" class="hover:text-slate-900 text-2xl transition"><i class="fa-brands fa-github"></i></a>
+    <footer class="bg-slate-900 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-8 md:mb-0">
+                <div class="text-2xl font-black text-blue-400 tracking-tighter italic mb-4">JOAOVILAR<span class="text-white">.DATA</span></div>
+                <p class="text-slate-400 max-w-xs text-sm">Construindo inteligência através de dados desde 2014. Especialista Microsoft & Databricks.</p>
             </div>
-            <p class="text-sm text-slate-400 font-medium">© 2024 João Vilar Braga. Projetando o futuro com dados e precisão.</p>
+            <div class="flex space-x-6 text-2xl">
+                <a href="https://www.linkedin.com/in/joao-vilar-braga/" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/joaovilar" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/joaovilar.data" target="_blank" class="hover:text-pink-400 transition"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-slate-800 mt-12 pt-8 text-center text-slate-500 text-xs">
+            © 2025 João Vilar Braga. Todos os direitos reservados.
         </div>
     </footer>
 
@@ -600,10 +618,10 @@
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
+                    });
+                }
             });
-        }
-    });
-});
+        });
     </script>
 </body>
 </html>
