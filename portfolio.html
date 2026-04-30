@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Vilar Braga | Engenheiro de Dados Sênior | Cientista de Dados</title>
+    <title>João Vilar Braga | Engenheiro de Dados Sênior | Análise de Dados</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -39,6 +39,24 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        @keyframes fade1 {
+    0%, 45% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+@keyframes fade2 {
+    0%, 45% { opacity: 0; }
+    50%, 100% { opacity: 1; }
+}
+
+.animate-fade1 {
+    animation: fade1 3s infinite;
+}
+
+.animate-fade2 {
+    animation: fade2 3s infinite;
+}
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -521,6 +539,32 @@
                         <h4 class="font-bold text-slate-800 leading-tight">Vendas de Viagens</h4>
                         <p class="text-slate-500 text-xs mt-1">Turismo e Marketplace de Passagens</p>
                     </div>
+
+<div class="group project-card">
+    <div class="relative h-56 bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-sm">
+
+        <img src="https://i.postimg.cc/cC9ytDjs/imagem-(4).png"
+             class="absolute w-full h-full object-cover animate-fade1">
+
+        <img src="https://i.postimg.cc/sx6dGnLk/imagem-(5).png"
+             class="absolute w-full h-full object-cover animate-fade2">
+
+        <a href="#" target="_blank"
+           class="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <span class="text-white font-bold px-4 py-2 border border-white rounded-lg text-sm">
+                Ver Dashboard
+            </span>
+        </a>
+    </div>
+
+    <h4 class="font-bold text-slate-800 leading-tight">
+        Monitoramento - Painel de Importação
+    </h4>
+
+    <p class="text-slate-500 text-xs mt-1">
+        Monitoramento do envio diário de arquivos por empresa, identificando falhas, atrasos e inconsistências na ingestão de dados.
+    </p>
+</div>
 
                 </div>
             </div>
